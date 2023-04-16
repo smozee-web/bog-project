@@ -63,30 +63,30 @@
                     <div class="row">
                       <div class="col-md-6">
                         <label for="from-date">From</label>
-                        <input type="date" value="2022-01-01" class="form-control" id="from_date" name="from">
+                        <input type="date" class="form-control" id="from-date" name="from">
                       </div>
                       <div class="col-md-6">
                         <label for="to-date">To</label>
-                        <input type="date" value="2022-12-31" class="form-control" id="to_date" name="to">
+                        <input type="date" class="form-control" id="to-date" name="to">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="select-position">Transaction Monitoring</label>
-                    <select class="form-control" id="trans_mon" name="position-type">
-                      <option value="mde">Mutual Dealers -external</option>
-                      <option value="mdi">Mutual Dealer Internal</option>
-                      <option value="cb_idf">Commercial Banks (CBs) Compliance - IDF</option>
-                      <option value="cb_loc">Commercial Banks (CBs) Compliance - LOC</option>
-                      <option value="blk_trans">Black Transferers</option>
-                      <option value="blk_rec">Black receivers</option>
+                    <select class="form-control" id="position_id" name="position-type">
+                      <option value="mdu">Mutual Dealers -external</option>
+                      <option value="mdu">Mutual Dealer Internal</option>
+                      <option value="mdu">Commercial Banks (CBs) Compliance - IDF</option>
+                      <option value="mdu">Commercial Banks (CBs) Compliance - LOC</option>
+                      <option value="mdu">Black Transferers</option>
+                      <option value="mdu">Black receivers</option>
                     </select>
                   </div>
                   <div class="card">
 
                   </div>
                   <div class="col-12 text-center">
-                    <button class="btn btn-info" type="button" id="submit">Search</button>
+                    <button class="btn btn-info" type="submit" id="submit">Search</button>
                   </div>
                 </form>
 
@@ -133,54 +133,74 @@
   <script type="text/javascript">
     let $objects = {};
     $(() => {
-      $objects['from_date'] = $('#from_date');
-      $objects['to_date'] = $('#to_date');
-      $objects['trans_mon'] = $('#trans_mon');
-     
+      $objects['file'] = $('#file');
+      $objects['position_id'] = $('#position_id');
+      $objects['from-date'] = $('#from-date');
+      $objects['to-date'] = $('#to-date');
       $objects['submit'] = $('#submit');
-
-    //   $('.actual').hide();
-    //   $('.ghipss').hide();
-    //   $('#trans_mon').on('change', function() {
-    //     if ($(this).val() == 'auth_val' || $(this).val() == 'uncrd_term') {
-    //       $('.ghipss').show();
-    //       $('.actual').hide();
-    //     } else if ($(this).val() == 'actual_soa') {
-    //       $('.actual').show();
-    //       $('.ghipss').show();
-    //     }
-    //   });
 
       $objects['submit'].click(function(e) {
         e.preventDefault();
-        if ($objects['trans_mon'].val() == 'mde') {
-          location = `/trans_monitoring/mde?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
+
+        // File presence checking
+        if (!$objects['file'].get(0).files.length) {
+          $objects['file'].siblings('.invalid-feedback').html('Choose file');
+          $objects['file'].removeClass('is-valid').addClass('is-invalid');
+          return;
         }
-        if ($objects['trans_mon'].val() == 'mdi') {
-          location = `/trans_monitoring/mdi?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'cb_idf') {
-          location = `/trans_monitoring/cb_idf?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'cb_loc') {
-          location = `/trans_monitoring/cb_loc?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'blk_trans') {
-          location = `/trans_monitoring/blk_trans?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'blk_rec') {
-          location = `/trans_monitoring/blk_rec?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        
+
+        $objects['submit'].prop('disabled', true).html(`
+          Uploading <span id="upload_per"></span>
+					<div class="spinner-border spinner-border-sm text-light" role="status"></div>
+				`);
+        //$objects['back'].prop('disabled', true);
+
+        let $upload_per = $('#upload_per');
+
+        let fd = new FormData();
+        fd.append('file', $objects['file'].get(0).files[0]);
+        fd.append('from-date', $objects['from-date'].get(0).files[0]);
+        fd.append('to-date', $objects['to-date'].get(0).files[0]);
+        fd.append('position_id', $objects['position_id'].get(0).files[0]);
+
+        $.ajax({
+          'url': '/position/load',
+          'type': 'POST',
+          'data': fd,
+          'dataType': 'json',
+          'contentType': false,
+          'processData': false,
+          'success': result => {
+            if (result.status == "success") {
+              $objects['form'].find('.is-invalid').removeClass('is-invalid');
+              Swal.fire({
+                title: 'File sent',
+                icon: "success"
+              });
+              datatable.draw(false);
+            }
+          },
+          'error': result => {
+            console.log(result.responseJSON.message);
+            $o.submit.html('Upload');
+          },
+          'complete': result => {
+            $objects['submit'].html('Upload').prop('disabled', false);
+          }
+        });
       });
     });
+    const periodSelect = document.getElementById('period-select');
+    const customizedDate = document.getElementById('customized-date');
+    const chooseDate = document.getElementById('choose-date');
 
-    // $('#search-form').submit(function(e) {
-    //   // Prevent the default form submission
-    //   e.preventDefault();
-    //   // Navigate to the new page
-    //   window.location.href = '/position/ghipss_soa';
-    // });
+
+    $('#search-form').submit(function(e) {
+      // Prevent the default form submission
+      e.preventDefault();
+      // Navigate to the new page
+      window.location.href = '/position/ghipss_soa';
+    });
   </script>
 
 </body>
