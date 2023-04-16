@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Organization</title>
+    <title>Create Users</title>
+
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -47,12 +48,7 @@
       }
     </style>
 
-    <script>
-      let linkToOrg = (index) => {
-        // console.log(index);
-        window.location = `/home/organizations/${index}`;
-      };
-    </script>
+    <script></script>
   </head>
 
   <body
@@ -75,65 +71,90 @@
           <%- include('../../partials/admin-nav'); -%>
           <div class="row">
             <div class="col-12">
-              <div class="page-title-box">
-                <h4 class="page-title">Organizations</h4>
+              <div class="page-title-box d-flex align-items-center gap-x-8">
+                <h4 class="page-title mr-3">User</h4>
               </div>
             </div>
           </div>
           <div class="p-3 mb-2 bg-white text-dark rounded">
-            <table id="table" class="table table-hover table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>logo</th>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Users</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr onclick="linkToOrg(1)" role="button">
-                  <td>1</td>
-                  <td>
-                    <img
-                      src="/assets/images/police.png"
-                      width="70"
-                      alt="Ghana Police(2)"
-                    />
-                  </td>
-                  <td><h4>Ghana Police Service</h4></td>
-                  <td>Institution</td>
-                  <td>42</td>
-                </tr>
-                <tr onclick="linkToOrg(2)" role="button">
-                  <td>2</td>
-                  <td>
-                    <img src="/assets/images/coa.png" width="70" alt="FIC" />
-                  </td>
-                  <td><h4>Financial Intelligence Center</h4></td>
-                  <td>Department</td>
-                  <td>15</td>
-                </tr>
-                <tr onclick="linkToOrg(3)" role="button">
-                  <td>3</td>
-                  <td>
-                    <img src="/assets/images/gra.png" width="70" alt="" />
-                  </td>
-                  <td><h4>Ghana Revenue Authority</h4></td>
-                  <td>Agency</td>
-                  <td>32</td>
-                </tr>
-                <tr onclick="linkToOrg(4)" role="button">
-                  <td>4</td>
-                  <td>
-                    <img src="/assets/images/eoco.png" width="70" alt="" />
-                  </td>
-                  <td><h4>Economic and Organized Crime Office</h4></td>
-                  <td>Agency</td>
-                  <td>12</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="mb-3">
+              <label for="simpleinput" class="form-label">Staff Number</label>
+              <input type="text" id="simpleinput" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+              <label for="example-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="example-email"
+                name="example-email"
+                class="form-control"
+                placeholder="Email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="simpleinput" class="form-label">Staff Name</label>
+              <input type="text" id="simpleinput" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="example-date" class="form-label">Date of Birth</label>
+              <input
+                class="form-control"
+                id="example-date"
+                type="date"
+                name="date"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="example-select" class="form-label"
+                >Organization</label
+              >
+              <select class="form-select" id="example-select">
+                <option>Ghana Police Service</option>
+                <option>Financial Intelligence Center</option>
+                <option>Ghana Revenue Authority</option>
+                <option>Economic and Organized Crime Unit</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="example-select" class="form-label">Rank</label>
+              <select class="form-select" id="example-select">
+                <option>Rank 1</option>
+                <option>Rank 2</option>
+                <option>Rank 3</option>
+                <option>Rank 4</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="example-select" class="form-label">Reports to</label>
+              <select class="form-select" id="example-select">
+                <option>Staff 1</option>
+                <option>Staff 2</option>
+                <option>Staff 3</option>
+                <option>Staff 4</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="example-select" class="form-label">User Type</label>
+              <select class="form-select" id="example-select">
+                <option>Established</option>
+                <option>National Service Personnel</option>
+                <option>Contract</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+           
+
+            <div class="mb-3">
+              <label for="example-fileinput" class="form-label"
+                >Default file input</label
+              >
+              <input type="file" id="example-fileinput" class="form-control" />
+            </div>
+             
+            </div>
           </div>
           <!-- Start Content-->
 
@@ -168,10 +189,10 @@
 
     <script type="text/javascript">
       let $objects = {};
-
       $(() => {
+        $objects["file"] = $("#file");
+        $objects["submit"] = $("#submit");
         $objects["table"] = $("#table");
-
         $objects["table"].DataTable();
       });
     </script>

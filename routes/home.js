@@ -10,8 +10,18 @@ router.get('/user', function (req, res, next) {
 router.get('/user/create', function (req, res, next) {
   res.render('pages/home/user-creation'); 
 });
+router.get('/user/create-user', function (req, res, next) {
+  res.render('pages/home/create-user'); 
+});
 router.get('/organization', function (req, res, next) {
   res.render('pages/home/organization'); 
+});
+
+router.get('/organizations/:orgID', function (req, res, next) {
+  res.render('pages/home/organization-show', {orgID: req.params.orgID}); 
+});
+router.get('/organizations/:orgID', function (req, res, next) {
+  res.render('pages/home/organization-show', {orgID: req.params.orgID}); 
 });
 
 router.get('/data', function (req, res) {

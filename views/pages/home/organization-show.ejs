@@ -49,8 +49,7 @@
 
     <script>
       let linkToOrg = (index) => {
-        // console.log(index);
-        window.location = `/home/organizations/${index}`;
+        window.location = `/user/organization/${index}`;
       };
     </script>
   </head>
@@ -81,59 +80,7 @@
             </div>
           </div>
           <div class="p-3 mb-2 bg-white text-dark rounded">
-            <table id="table" class="table table-hover table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>logo</th>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Users</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr onclick="linkToOrg(1)" role="button">
-                  <td>1</td>
-                  <td>
-                    <img
-                      src="/assets/images/police.png"
-                      width="70"
-                      alt="Ghana Police(2)"
-                    />
-                  </td>
-                  <td><h4>Ghana Police Service</h4></td>
-                  <td>Institution</td>
-                  <td>42</td>
-                </tr>
-                <tr onclick="linkToOrg(2)" role="button">
-                  <td>2</td>
-                  <td>
-                    <img src="/assets/images/coa.png" width="70" alt="FIC" />
-                  </td>
-                  <td><h4>Financial Intelligence Center</h4></td>
-                  <td>Department</td>
-                  <td>15</td>
-                </tr>
-                <tr onclick="linkToOrg(3)" role="button">
-                  <td>3</td>
-                  <td>
-                    <img src="/assets/images/gra.png" width="70" alt="" />
-                  </td>
-                  <td><h4>Ghana Revenue Authority</h4></td>
-                  <td>Agency</td>
-                  <td>32</td>
-                </tr>
-                <tr onclick="linkToOrg(4)" role="button">
-                  <td>4</td>
-                  <td>
-                    <img src="/assets/images/eoco.png" width="70" alt="" />
-                  </td>
-                  <td><h4>Economic and Organized Crime Office</h4></td>
-                  <td>Agency</td>
-                  <td>12</td>
-                </tr>
-              </tbody>
-            </table>
+            one organization
           </div>
           <!-- Start Content-->
 
