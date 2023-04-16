@@ -29,6 +29,9 @@ router.get('/suspicious', function (req, res) {
 router.get('/watchlist', function (req, res) {
   res.render('pages/home/watchlist-screening');
 });
+router.get('/watchlist_details', function (req, res) {
+  res.render('pages/home/watchlist_details' , {"search_element" :req.query["search_element"]});
+});
 router.get('/tax', function (req, res) {
   res.render('pages/home/tax-compliance');
 });
