@@ -1,78 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      let linkUserMgt = () => (window.location = "/home/user");
+      let linkDataExc = () => (window.location = "/home/data");
+      let linkDiligence = () => (window.location = "/home/diligence");
+      let linkMonitoring = () => (window.location = "/home/monitoring");
+      let linkSuspicious = () => (window.location = "/home/suspicious");
+      let linkWatchlist = () => (window.location = "/home/watchlist");
+      let linkTax = () => (window.location = "/home/tax");
+      let linkCases = () => (window.location = "/home/cases");
+      let linkAnalytics = () => (window.location = "/home/analytics");
+    </script>
+  </head>
 
-<head>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    let linkUserMgt = () =>window.location = '/home/user';
-    let linkDataExc = () =>window.location = '/home/data';
-    let linkDiligence = () =>window.location = '/home/diligence';
-    let linkMonitoring = () =>window.location = '/home/monitoring';
-    let linkSuspicious = () =>window.location = '/home/suspicious';
-    let linkWatchlist = () =>window.location = '/home/watchlist';
-    let linkTax = () =>window.location = '/home/tax';
-    let linkCases = () =>window.location = '/home/cases';
-    let linkAnalytics = () =>window.location = '/home/analytics';
-  </script>
-</head>
-
-
-<!-- start page title -->
-<div class="row">
-  <div class="col-12">
-    <div class="page-title-box">
-     
-      <h4 class="page-title">Home</h4>
+  <!-- start page title -->
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <h4 class="page-title">Home</h4>
+      </div>
     </div>
   </div>
-</div>
-<!-- end page title -->
-<div class="bg-white py-12 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-   
-    <ul role="list" class="mx-auto grid max-w-2xl grid-cols-2 gap-x-8 gap-y-8 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
-      <li onclick="linkUserMgt()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto w-24 rounded-full" src="assets/images/57946-profile-user-card.gif" alt="User Management">
-        <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">User Management</h3>
-      </li>
-      <li onclick="linkDataExc()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/50839-data-exchange.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Data Exchange</h3>
-      </li>
-      <li onclick="linkDiligence()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/89683-user-reviews.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Customer Due Diligence</h3>
-      </li>
-      <li onclick="linkMonitoring()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/118043-data-analytics-techniques.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Transaction Monitoring</h3>
-      </li>
-      <li onclick="linkSuspicious()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/141376-browser-click.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Suspicious Activity Reporting</h3>
-      </li>
-      <li onclick="linkWatchlist()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/140397-screening.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Watchlist Screening</h3>
-      </li>
-      <li onclick="linkTax()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/126966-wish-list-animation.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Tax Compliance</h3>
-      </li>
-      <li onclick="linkCases()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/95778-check-yes-search.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Case Management</h3>
-      </li>
-      <li onclick="linkAnalytics()" class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer">
-        <img class="mx-auto h-24 w-24 rounded-full" src="assets/images/94080-blockchain-analysis.gif" alt="">
-        <h3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">Data Analytics</h3>
-      </li>
+  <!-- end page title -->
+  <div class="bg-white py-12 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <ul
+        role="list"
+        class="mx-auto grid max-w-2xl grid-cols-2 gap-x-8 gap-y-8 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+      >
+        <li
+          onclick="linkUserMgt()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto w-24 rounded-full"
+            src="assets/images/57946-profile-user-card.gif"
+            alt="User Management"
+          />
+          <h3
+            class="text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            User Management
+          </h3>
+        </li>
+        <li
+          onclick="linkDataExc()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/50839-data-exchange.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Data Exchange
+          </h3>
+        </li>
+        <li
+          onclick="linkDiligence()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/89683-user-reviews.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Customer Due Diligence
+          </h3>
+        </li>
+        <li
+          onclick="linkMonitoring()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/118043-data-analytics-techniques.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Transaction Monitoring
+          </h3>
+        </li>
+        <li
+          onclick="linkSuspicious()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/141376-browser-click.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Suspicious Activity Reporting
+          </h3>
+        </li>
+        <li
+          onclick="linkWatchlist()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/140397-screening.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Watchlist Screening
+          </h3>
+        </li>
+        <li
+          onclick="linkTax()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/126966-wish-list-animation.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Tax Compliance
+          </h3>
+        </li>
+        <li
+          onclick="linkCases()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/95778-check-yes-search.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Case Management
+          </h3>
+        </li>
+        <li
+          onclick="linkAnalytics()"
+          class="rounded-2xl hover:bg-gray-100 py-4 cursor-pointer"
+        >
+          <img
+            class="mx-auto h-24 w-24 rounded-full"
+            src="assets/images/94080-blockchain-analysis.gif"
+            alt=""
+          />
+          <h3
+            class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900"
+          >
+            Data Analytics
+          </h3>
+        </li>
 
-      <!-- More people... -->
-    </ul>
+        <!-- More people... -->
+      </ul>
+    </div>
   </div>
-</div>
 
-<!-- end row -->
-
+  <!-- end row -->
 </html>
