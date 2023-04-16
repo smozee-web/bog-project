@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Position | gfca </title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/gfca.png">
+
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+
+
+  <!-- third party css end -->
+
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .btn-xxl {
+      font-size: calc(2rem + 0.0012vw);
+      padding: 0.8rem 1rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    #table td {
+      padding: 1px;
+      font-size: 13px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .btn.delete {
+      border: none;
+      padding: 0;
+    }
+
+    .btn.view {
+      border: none;
+      padding: 0;
+    }
+  </style>
+
+
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
+  <!-- Begin page -->
+  <div class="wrapper">
+    <%- include('../../partials/admin-side'); -%>
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row justify-content-center">
+          <div class="col-md-6 offset-md-1 ">
+            <div class="card">
+
+            </div>
+            <div class="card">
+              <div class="card-header text-center">Generate SOA Validation</div>
+              <div class="card-body">
+                <form>
+                  <div class="form-group" id="customized-date">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="from-date">From</label>
+                        <input type="date" class="form-control" id="from-date" name="from">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="to-date">To</label>
+                        <input type="date" class="form-control" id="to-date" name="to">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="select-position">Select Partner</label>
+                    <select class="form-control" id="select-position" name="position-type">
+                      <option value="">Zenith Bank GH</option>
+                      <option value="">Unity Link</option>
+                      <option value="">FIRST APPLE INC</option>
+                      <option value="">All</option>
+                    </select>
+                  </div>
+                  <div class="card">
+
+                  </div>
+                  <div class="col-12 text-center">
+                    <button class="btn btn-info" type="submit" id="submit" data-type="add">Generate</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>N°</th>
+                <th>Partner</th>
+                <th>Currency</th>
+                <th>Powered Amount</th>
+                <th>Amount Received</th>
+                <th>Excpected Outstanding</th>
+                <th>Actual Outstanding</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+
+        </div>
+        <!-- container -->
+
+      </div>
+      <!-- content -->
+
+
+
+
+
+    </div>
+    <%- include('../../partials/footer'); -%>
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+
+  <!-- bundle -->
+  <script src="/assets/js/vendor.min.js"></script>
+  <script src="/assets/js/app.min.js"></script>
+
+  <!-- third party js -->
+  <script src="/assets/js/vendor/apexcharts.min.js"></script>
+  <script src="/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+
+  <script src="/assets/js/vendor/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/vendor/dataTables.bootstrap5.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <!-- third party js ends -->
+
+  <script type="text/javascript">
+    const periodSelect = document.getElementById('period-select');
+    const customizedDate = document.getElementById('customized-date');
+    const chooseDate = document.getElementById('choose-date');
+
+    periodSelect.addEventListener('change', function() {
+      if (this.value === 'customized') {
+        customizedDate.style.display = 'block';
+        chooseDate.style.display = 'none';
+      } else if (this.value === 'choose-date') {
+        customizedDate.style.display = 'none';
+        chooseDate.style.display = 'block';
+      }
+    });
+    let $objects = {};
+
+
+    $objects['table'] = $('#table');
+
+    $objects['table'].DataTable();
+    let selectedRow = null;
+    let datatable = null;
+
+    datatable = $objects['table']
+      .on('click', '.delete', function(e) {
+        selectedRow = $(this).closest('tr');
+        Swal.fire({
+          title: 'Do you want to delete this head ?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Delete',
+        }).then(result => {
+          if (result.isConfirmed)
+            selectedRow.remove();
+        });
+      })
+      .DataTable({
+        'processing': true,
+        'serverSide': true,
+        'columns': [{
+            'data': 'id'
+          },
+          {
+            'data': 'name'
+          },
+          {
+            'data': 'created_at'
+          },
+          {
+            'data': 'actions',
+            'orderable': false
+          }
+        ],
+        'order': [0, 'asc'],
+        'ajax': {
+          'url': '/tbalList',
+          'type': 'POST',
+          'dataType': 'json',
+          'data': d => {},
+          'error': data => {
+            console.log(data);
+          }
+        },
+        'pageLength': 25,
+        'autoWidth': false
+      });
+  </script>
+
+</body>
+
+</html>

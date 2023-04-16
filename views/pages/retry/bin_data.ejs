@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Recycle Bin - <%= file.filename %> | gfca </title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/gfca.png">
+
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+  <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+  <!-- third party css end -->
+
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .btn-xxl {
+      font-size: calc(2rem + 0.0012vw);
+      padding: 0.8rem 1rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    #table td {
+      padding: 1px;
+      font-size: 13px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .btn.restore {
+      border: none;
+      padding: 0;
+    }
+
+    .btn.view {
+      border: none;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
+  <!-- Begin page -->
+  <div class="wrapper">
+    <%- include('../../partials/admin-side'); -%>
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Admin</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Deleted transactions from <%= file.filename %></h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <table id="table" class="table text-center nowrap w-100">
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox" id="check-all"></th>
+                      <th>id</th>
+                      <th>company</th>
+                      <th>date</th>
+                      <th>amount</th>
+                      <th>firstname</th>
+                      <th>lastname</th>
+                      <th>bankname</th>
+                      <th>account_number</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                  </tbody>
+                </table>
+                <div class="mb-3 text-center d-flex justify-content-center">
+                  <button type="button" class="btn btn-warning" id="restore-btn" style="display: none;">Restore</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- container -->
+
+      </div>
+      <!-- content -->
+
+
+
+      <%- include('../../partials/footer'); -%>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+
+
+  <%- include('../../partials/admin-layout'); -%>
+  <script type="text/javascript">
+    let $objects = {};
+
+    $(() => {
+      $objects['table'] = $('#table');
+
+      $objects['table']
+        .DataTable({
+          processing: true,
+          serverSide: true,
+          columns: [{
+              data: 'checkbox',
+              orderable: false
+            },
+            {
+              data: 'id'
+            },
+            {
+              data: 'company'
+            },
+            {
+              data: 'date'
+            },
+            {
+              data: 'amount'
+            },
+            {
+              data: 'firstname'
+            },
+            {
+              data: 'lastname'
+            },
+            {
+              data: 'bankname'
+            },            
+            {
+              data: 'account_number'
+            },            
+          ],
+          order: [2, 'asc'],
+          ajax: {
+            url: '/retry/del_list',
+            type: 'POST',
+            dataType: 'json',
+            data: d => {
+               d.f_retry_id = '<%= file._id %>';
+            },
+            error: data => {
+              console.log(data);
+            }
+          },
+          pageLength: 25,
+          autoWidth: false,
+          scrollX: true
+        });
+    });
+
+    const checkAll = $('#check-all');
+    const checkItems = $('.check-item');
+    const restoreBtn = $('#restore-btn');
+
+    checkAll.on('change', function() {
+      checkItems.prop('checked', this.checked);
+      restoreBtn.toggle(this.checked);
+    });
+
+    checkItems.on('change', function() {
+      const checkedItems = $('.check-item:checked');
+      restoreBtn.toggle(checkedItems.length > 0);
+      checkAll.prop('checked', checkedItems.length === checkItems.length);
+    });
+
+    restoreBtn.on('click', function() {
+      const checkedItems = $('.check-item:checked');
+
+      if (checkedItems.length > 0) {
+        const title = checkedItems.length === 1 ? 'Do you want to restore this transaction?' : 'Do you want to restore these transactions?';
+        Swal.fire({
+          title: title,
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Restore',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const ids = checkedItems.map(function() {
+              return $(this).data('id');
+            }).get();
+
+            $.ajax({
+              url: '/retry/data_restore',
+              method: 'POST',
+              data: {
+                ids: ids
+              },
+              success: function(response) {
+                checkedItems.each(function() {
+                  $(this).closest('tr').remove();
+                });
+                restoreBtn.hide();
+                checkAll.prop('checked', false);
+                Swal.fire({
+                  title: 'Rows restored successfully',
+                  icon: 'success',
+                });
+              },
+              error: function(xhr, status, error) {
+                Swal.fire({
+                  title: 'Error restoring rows',
+                  text: xhr.responseText,
+                  icon: 'error',
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

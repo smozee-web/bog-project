@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+
+
+  <!-- third party css end -->
+
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .link {
+      color: #98a6ad;
+    }
+
+    .link:hover {
+      color: #727cf5;
+    }
+  </style>
+</head>
+
+
+<!-- start page title -->
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box">
+      <div class="page-title-right">
+
+      </div>
+      <h4 class="page-title">Dashboard</h4>
+    </div>
+  </div>
+</div>
+<!-- end page title -->
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Imports And Exports</h4>
+        <div dir="ltr">
+          <div id="negative-bar" class="apex-charts" data-colors="#fa5c7c,#0acf97"></div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">IDF And BOE</h4>
+        <div dir="ltr">
+          <div id="negative-bar2" class="apex-charts" data-colors="#fa5c7c,#0acf97"></div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <!-- <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Circle Chart - Custom Angle</h4>
+        <div class="text-center" dir="ltr">
+          <div id="circle-angle-radial" class="apex-charts" data-colors="#0acf97,#727cf5,#fa5c7c,#ffbc00"></div>
+        </div>
+      </div> -->
+  <!-- end card body-->
+  <!-- </div> -->
+  <!-- end card -->
+  <!-- </div> -->
+  <!-- end col-->
+</div>
+
+<div class="row">
+  <div class="col-xl-6 col-lg-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">Total Transfers Types </h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/shopfiles/dashboard_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= termination_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Outbound :<%= termination_sent_total %> $</p>
+                <p class="mt-2 mb-0">Inbound :<%= termination_payout_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">SWIFT</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/payments_gateway/compensation_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= payment_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Individuals : <%= payment_debit_total %> $</p>
+                <p class="mt-2 mb-0">Banks : <%= payment_credit_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+    </div> <!-- end row -->
+
+    <div class="my-2"></div> <!-- Ajoute un espace de 2 unités entre les deux divs -->
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">IDF Types</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/bank_statement/bank_stat_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= treasury_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Pre-import : <%= treasury_debit_total %> $</p>
+                <p class="mt-2 mb-0">Post-import : <%= treasury_credit_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">BOE Mis-invoicing</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/authorizations/authzs_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= authorizations_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Petroleum : <%= authorizations_amount %> $</p>
+                <p class="mt-2 mb-0">Dry : <%= authorizations_amount %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+    </div> <!-- end row -->
+  </div> <!-- end col -->
+
+  <div class="col-xl-6 col-lg-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">SWIFT Types</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/retry/zenith_bk_gh_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= retry_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Petroleum : <%= retry_amount %> $</p>
+                <p class="mt-2 mb-0">Dry : <%= retry_amount %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end col-->
+
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">Letters of Commitment</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/payments/all_gateway_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= consolidated_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Traditional : <%= consolidated_debit_total %> $</p>
+                <p class="mt-2 mb-0">Non-traditional : <%= consolidated_credit_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+    </div> <!-- end row -->
+
+    <div class="my-2"></div> <!-- Ajoute un espace de 2 unités entre les deux divs -->
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">Fx Support</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/ghipss/ghipss_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= ghipss_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Amount : <%= ghipss_outbound_total %> $</p>
+                <!-- <p class="mt-2 mb-0">Inbound : <%= ghipss_inbound_total %> $</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">LoC Perfected</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/soa/new_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= soa_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Exports : <%= soa_debit_total %> $</p>
+                <p class="mt-2 mb-0">Repatriatied : <%= soa_credit_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+    </div> <!-- end row -->
+  </div> <!-- end col -->
+
+  <div class="col-xl-6 col-lg-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">Currency Declaration Form</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/retry/zenith_bk_gh_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= retry_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Personal : <%= retry_amount %> $</p>
+                <p class="mt-2 mb-0">Business : <%= retry_amount %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end col-->
+
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">IDF Status</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/payments/all_gateway_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= consolidated_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Perfected : <%= consolidated_debit_total %> $</p>
+                <p class="mt-2 mb-0">Expired : <%= consolidated_credit_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+    </div> <!-- end row -->
+
+    <div class="my-2"></div> <!-- Ajoute un espace de 2 unités entre les deux divs -->
+  </div> <!-- end col -->
+
+  <div class="col-xl-6 col-lg-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">Case management</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/retry/zenith_bk_gh_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= retry_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">Concluded : <%= ghipss_outbound_total %> $</p>
+                <p class="mt-2 mb-0">Pending : <%= ghipss_inbound_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end col-->
+
+      <div class="col-sm-6">
+        <div class="card widget-flat h-100">
+          <div class="card-header">
+            <h4 class="card-title text-center">Bank Transfers</h4>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="me-auto text-center">
+                <a href="/payments/all_gateway_dt">
+                  <button class="btn-secondary">
+                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>
+                      <%= consolidated_count %> files
+                    </span>
+                  </button>
+                </a>
+              </div>
+              <div class="ms-3">
+                <p class="mb-0">CBs : <%= soa_debit_total %> $</p>
+                <p class="mt-2 mb-0">BoG : <%= soa_credit_total %> $</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col-->
+    </div> <!-- end row -->
+  </div> <!-- end col -->
+
+  <!-- bundle -->
+  <script src="assets/js/vendor.min.js"></script>
+  <script src="assets/js/app.min.js"></script>
+
+  <!-- third party:js -->
+  <script src="assets/js/vendor/apexcharts.min.js"></script>
+  <!-- third party end -->
+
+  <!-- demo:js -->
+  <script src="assets/js/pages/demo.apex-bar.js"></script>
+  <script src="assets/js/pages/demo.apex-radialbar.js"></script>
+
+</div>
+<!-- end row -->
+
+</html>

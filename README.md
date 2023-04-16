@@ -1,1 +1,1 @@
-# bog-project
+# BOG-GH

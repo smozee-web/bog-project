@@ -1,0 +1,146 @@
+<div class="collapse" id="sidebarCharts">
+                    <ul class="side-nav-second-level">
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false"
+                                aria-controls="sidebarApexCharts">
+                                <span> Shop files </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarApexCharts">
+                                <ul class="side-nav-third-level">
+                                    <li>
+                                        <a href="charts-apex-area.html">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-bar.html">Instant money</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-bubble.html">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Termination</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false"
+                                aria-controls="sidebarApexCharts">
+                                <span> Payments Gateways </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarApexCharts">
+                                <ul class="side-nav-third-level">
+                                    <li>
+                                        <a href="charts-apex-area.html">Compensation</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-bar.html">Dream oval.</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-bubble.html">MTN Ghana</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Vodafone</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Airtel Ghana</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Etransact</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Origgin</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Hub2</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Intourch direct</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">MFS Africa</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">MangoPay</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">SwervePay</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">MTN Uganda</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Weloadly</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Trust</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Kazang</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-candlestick.html">Cyber source</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false"
+                                aria-controls="sidebarApexCharts">
+                                <span> Retry </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarApexCharts">
+                                <ul class="side-nav-third-level">
+                                    <li>
+                                        <a href="charts-apex-area.html">Zenith Bank</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-bar.html">Manual push</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false"
+                                aria-controls="sidebarApexCharts">
+                                <span> Payments </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarApexCharts">
+                                <ul class="side-nav-third-level">
+                                    <li>
+                                        <a href="charts-apex-area.html">All gateways</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="charts-brite.html">Bank statements</a>
+                        </li>
+                        <li>
+                            <a href="charts-brite.html">Authorizations</a>
+                        </li>
+                        <li>
+                            <a href="charts-brite.html">GHIPSS</a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarApexCharts" aria-expanded="false"
+                                aria-controls="sidebarApexCharts">
+                                <span> statements Of Affairs </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarApexCharts">
+                                <ul class="side-nav-third-level">
+                                    <li>
+                                        <a href="charts-apex-area.html">New</a>
+                                    </li>
+                                    <li>
+                                        <a href="charts-apex-bar.html">All</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>

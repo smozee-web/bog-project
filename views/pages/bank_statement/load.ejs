@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Load - Bank Statements | gfca </title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/gfca.png">
+
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+
+
+  <!-- third party css end -->
+
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .btn-xxl {
+      font-size: calc(2rem + 0.0012vw);
+      padding: 0.8rem 1rem;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
+  <!-- Begin page -->
+  <div class="wrapper">
+    <%- include('../../partials/admin-side'); -%>
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row page-title-header">
+          <div class="col-12">
+            <div class="page-header">
+              <h4 class="page-title">Create Bank Account (Project: )</h4>
+            </div>
+          </div>
+        </div>
+        ​
+        <div class="row">
+          <div class="col-12 grid-margin">
+            <div class="card card-statistics">
+              <div class="card-body pt-3">
+                <form action="#" novalidate id="form">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <h4>Informations</h4>
+                      <hr>
+                      ​
+                      <div class="form-group">
+                        <label class="label" for="name">Account name</label>
+                        <input type="text" class="form-control" id="name">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                      ​
+                      <div class="form-group">
+                        <label class="label" for="number">Account number</label>
+                        <input type="text" class="form-control" id="number">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                      ​
+                      <div class="form-group">
+                        <label for="bank_id" class="form-label">Select Bank</label>
+                        <select class="form-select" id="bank_id">
+                          <option value="" disabled selected></option>
+                          @foreach($banks as $bk)
+                          <option value="{{$bk->id}}">{{$bk->name}}</option>
+                          @endforeach
+                        </select>
+                        <div class="invalid-feedback"></div>
+                      </div>
+                      ​
+                      <div class="form-group">
+                        <label class="label" for="branch">Branch</label>
+                        <input type="text" class="form-control" id="branch">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                      ​
+                      <div class="form-group">
+                        <label class="label" for="file">Select a file (.csv, .xlsx)</label>
+                        <input type="file" id="file" class="" accept=".csv, .xlsx" style="width: 100%;">
+                        <div class="invalid-feedback"></div>
+                      </div>
+                      ​
+                      <div class="form-group d-flex justify-content-center mt-3">
+                        <button class="btn btn-primary btn-lg submit-btn btn-block fs-6" id="submit">Save</button>
+                        <button class="btn btn-outline-primary btn-lg btn-block fs-6 ms-3" id="back">Back</button>
+                      </div>
+                    </div>
+                    ​
+                    <div class="col-12 col-md-6">
+                      <h4>Mapping</h4>
+                      <hr>
+                      ​
+                      <table class="table table-info">
+                        <thead>
+                          <tr class="table table-dark">
+                            <th class="text-light">Columns</th>
+                            <th class="text-light">Position in file</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td>Post Date</td>
+                            <td><input type="number" class="form-control" value="1" min="1" id="post_date"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Particulars</td>
+                            <td><input type="number" class="form-control" value="2" min="1" id="particulars"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Reference</td>
+                            <td><input type="number" class="form-control" value="3" min="1" id="reference"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Value Date</td>
+                            <td><input type="number" class="form-control" value="4" min="1" id="value_date"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Debit Amount</td>
+                            <td><input type="number" class="form-control" value="5" min="1" id="debit_amount"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Credit Amount</td>
+                            <td><input type="number" class="form-control" value="6" min="1" id="credit_amount"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Balance</td>
+                            <td><input type="number" class="form-control" value="7" min="1" id="balance"></td>
+                          </tr>
+                          ​
+                          <tr>
+                            <td>Offset Account Number</td>
+                            <td><input type="number" class="form-control" value="8" min="1" id="offset_acc_no"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- container -->
+
+      </div>
+      <!-- content -->
+
+
+
+      <%- include('../../partials/footer'); -%>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+
+  <!-- bundle -->
+  <script src="/assets/js/vendor.min.js"></script>
+  <script src="/assets/js/app.min.js"></script>
+
+  <!-- third party js -->
+  <script src="/assets/js/vendor/apexcharts.min.js"></script>
+  <script src="/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+
+  <script src="/assets/js/vendor/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/vendor/dataTables.bootstrap5.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <!-- third party js ends -->
+
+  <script type="text/javascript">
+    $(() => {
+      let $o = {
+        'form': $('#form'),
+        ​
+        'name': $('#name'),
+        'number': $('#number'),
+        'bank_id': $('#bank_id'),
+        'branch': $('#branch'),
+        'file': $('#file'),
+        ​
+        'post_date': $('#post_date'),
+        'particulars': $('#particulars'),
+        'reference': $('#reference'),
+        'value_date': $('#value_date'),
+        'debit_amount': $('#debit_amount'),
+        'credit_amount': $('#credit_amount'),
+        'balance': $('#balance'),
+        'offset_acc_no': $('#offset_acc_no'),
+
+        'submit': $('#submit'),
+        'back': $('#back')
+      };​
+      $o.submit.click(function(e) {
+        e.preventDefault();​
+        // File presence checking
+        if (!$o.file.get(0).files.length) {
+          $o.file.siblings('.invalid-feedback').html('Select a file');
+          $o.file.removeClass('is-valid').addClass('is-invalid');
+          return;
+        }​
+        $o.submit.prop('disabled', true).html(`
+          Uploading <span id="upload_per"></span>
+					<div class="spinner-border spinner-border-sm text-light" role="status"></div>
+				`);
+        $o.back.prop('disabled', true);​
+        let $upload_per = $('#upload_per');​
+        let fd = new FormData();​
+        fd.append('project_id', '{{ $project->id }}');
+        fd.append('name', $o.name.val());
+        fd.append('number', $o.number.val());
+        fd.append('bank_id', $o.bank_id.val());
+        fd.append('branch', $o.branch.val());
+        fd.append('file', $o.file.get(0).files[0]);​
+        fd.append('post_date', $o.post_date.val());
+        fd.append('particulars', $o.particulars.val());
+        fd.append('reference', $o.reference.val());
+        fd.append('value_date', $o.value_date.val());
+        fd.append('debit_amount', $o.debit_amount.val());
+        fd.append('credit_amount', $o.credit_amount.val());
+        fd.append('balance', $o.balance.val());
+        fd.append('offset_acc_no', $o.offset_acc_no.val());​
+        $.ajax({
+          'url': '/bank_statement/load',
+          'type': 'POST',
+          'data': fd,
+          'dataType': 'json',
+          'contentType': false,
+          'processData': false,
+          'xhr': () => {
+            let xhr = new XMLHttpRequest();​
+            xhr.upload.addEventListener('progress', function(e) {
+              if (e.lengthComputable) {
+                if (e.loaded == e.total) {
+                  $o.submit.html(`
+                    Processing
+                    <div class="spinner-border spinner-border-sm text-light" role="status">
+                    </div>
+                  `);
+                }​
+                $upload_per.html(parseInt(e.loaded * 100 / e.total) + '%');
+              }
+            }, false);​
+            return xhr;
+          },
+          'success': result => {
+            if (result.status == "success") {
+              $o.form.find('.is-invalid').removeClass('is-invalid');​
+              Swal({
+                title: 'Account Saved',
+                icon: "success"
+              });​
+              $o.name.val('').removeClass('is-valid is-invalid');
+              $o.number.val('').removeClass('is-valid is-invalid');
+              $o.file.val('').removeClass('is-valid is-invalid');
+
+              location = '/dashboard';
+            } else {
+              if ('message' in result) {
+                Swal({
+                  title: 'Error!',
+                  text: result.message,
+                  icon: 'error'
+                });
+              } else {
+                let $first = null;​
+                for (let name of fd.keys()) {
+                  if ([
+                      'project_id', ​
+                      'post_date',
+                      'particulars',
+                      'reference',
+                      'value_date',
+                      'debit_amount',
+                      'credit_amount',
+                      'balance',
+                      'offset_acc_no'
+                    ].includes(name)) {
+                    ​
+                    continue;
+                  }​
+                  let $obj = $o[name];
+                  let $feedback = $obj.siblings('.invalid-feedback');​
+                  if (name in result.errors) {
+                    $feedback.html(result.errors[name][0]);
+                    $obj.removeClass('is-valid').addClass('is-invalid');​
+                    if (!$first)
+                      $first = $feedback;
+                  } else {
+                    $obj.removeClass('is-invalid').addClass('is-valid');
+                  }
+                }​
+                if ($first) {
+                  let top = $first.parent().offset().top - 88;
+                  window.scrollTo({
+                    top,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }
+          },
+          'error': result => {
+            console.log(result.responseJSON.message);
+          },
+          'complete': result => {
+            $o.submit.html('Save').prop('disabled', false);
+            $o.back.prop('disabled', false);
+          }
+        });
+      });
+
+      //   $o.back.click(function(e) {
+      //     e.preventDefault();
+      //     location = '/projects/explore/{{ $project->id }}';
+      //   });
+    });
+  </script>
+
+</body>
+
+</html>

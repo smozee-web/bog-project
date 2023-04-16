@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Statistical Reports - Reconciled Payouts | gfca </title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/gfca.png">
+
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+
+
+  <!-- third party css end -->
+
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .btn-xxl {
+      font-size: calc(2rem + 0.0012vw);
+      padding: 0.8rem 1rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    #table td {
+      padding: 1px;
+      font-size: 13px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .btn.delete {
+      border: none;
+      padding: 0;
+    }
+
+    .btn.view {
+      border: none;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
+  <!-- Begin page -->
+  <div class="wrapper">
+    <%- include('../../partials/admin-side'); -%>
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Admin</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Reconciled Payouts</h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <table id="table" class="table text-center nowrap w-100">
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>reference_id</th>
+                      <th>description</th>
+                      <th>currency</th>
+                      <th>debit</th>
+                      <th>credit</th>
+                      <th>do_fee</th>
+                      <th>trans_date</th>
+                      <th>tr_date</th>
+                      <th>route</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Term0239</td>
+                      <td>78888881</td>
+                      <td>check</td>
+                      <td>GHC</td>
+                      <td>765440</td>
+                      <td>765440</td>
+                      <td>00</td>
+                      <td>2023-01-30 10:29:31</td>
+                      <td>2023-01-30</td>
+                      <td>air</td>
+                    </tr>
+                    <tr>
+                      <td>Term2780</td>
+                      <td>091773677772</td>
+                      <td>transfert</td>
+                      <td>$</td>
+                      <td>56000</td>
+                      <td>55000</td>
+                      <td>10000</td>
+                      <td>2023-01-30 10:29:31</td>
+                      <td>2023-01-30</td>
+                      <td>bank</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- container -->
+
+      </div>
+      <!-- content -->
+
+
+
+      <%- include('../../partials/footer'); -%>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+
+
+  <%- include('../../partials/admin-layout'); -%>
+  <script type="text/javascript">
+    let $objects = {};
+
+    $(() => {
+      $objects['table'] = $('#table');
+
+      $objects['table'].DataTable();
+      let selectedRow = null;
+      let datatable = null;
+
+      datatable = $objects['table']
+        .on('click', '.delete', function(e) {
+          selectedRow = $(this).closest('tr');
+          Swal.fire({
+            title: 'Do you want to delete this head ?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Delete',
+          }).then(result => {
+            if (result.isConfirmed)
+              selectedRow.remove();
+          });
+        })
+        .DataTable({
+          'processing': true,
+          'serverSide': true,
+          'columns': [{
+              'data': 'id'
+            },
+            {
+              'data': 'name'
+            },
+            {
+              'data': 'created_at'
+            },
+            {
+              'data': 'actions',
+              'orderable': false
+            }
+          ],
+          'order': [0, 'asc'],
+          'ajax': {
+            'url': '/tbalList',
+            'type': 'POST',
+            'dataType': 'json',
+            'data': d => {},
+            'error': data => {
+              console.log(data);
+            }
+          },
+          'pageLength': 25,
+          'autoWidth': false,
+          scrollX: true
+        });
+
+      $(".view").on("click", function() {
+        var fileName = $(this).closest("tr").find(".file-name").text();
+        var rowId = $(this).closest("tr").find("td:first-child").text();
+        window.location.href = "/payments/all_gw_content?fileName=" + fileName + "&rowId=" + rowId;
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

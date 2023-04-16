@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Data warehouse - <%= file.filename %> | gfca </title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/gfca.png">
+
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+  <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+  <!-- third party css end -->
+
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .btn-xxl {
+      font-size: calc(2rem + 0.0012vw);
+      padding: 0.8rem 1rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    #table td {
+      padding: 1px;
+      font-size: 13px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    .btn.delete {
+      border: none;
+      padding: 0;
+    }
+
+    .btn.view {
+      border: none;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
+  <!-- Begin page -->
+  <div class="wrapper">
+    <%- include('../../partials/admin-side'); -%>
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Admin</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Content of <%= file.filename %></h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <table id="table" class="table text-center nowrap w-100">
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox" id="check-all"></th>
+                      <th>date</th>
+                      <th>description</th>
+                      <th>receipts</th>
+                      <th>number_of_transactions</th>
+                      <th>payments</th>
+                      <th>currency</th>
+                      <th>reversals</th>
+                      <th>commissions</th>
+                      <th>balance</th>
+                      <th>month</th>
+                      <th>company</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                  </tbody>
+                </table>
+                <div class="mb-3 text-center d-flex justify-content-center">
+                  <button type="button" class="btn btn-danger" id="delete-btn" style="display: none;">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- container -->
+
+      </div>
+      <!-- content -->
+
+
+
+      <%- include('../../partials/footer'); -%>
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+  </div>
+  <!-- END wrapper -->
+
+
+  <%- include('../../partials/admin-layout'); -%>
+  <script type="text/javascript">
+    let $objects = {};
+
+    $(() => {
+      $objects['table'] = $('#table');
+
+
+      const checkAll = $('#check-all');
+      const deleteBtn = $('#delete-btn');
+
+      checkAll.on('change', function() {
+        const checkItems = $('.check-item');
+        checkItems.prop('checked', this.checked);
+        deleteBtn.toggle(this.checked);
+      });
+
+      $objects['table']
+      .on('change', '.check-item', function(e) {
+          const checkedItems = $('.check-item:checked');
+          const checkItems = $('.check-item');
+          deleteBtn.toggle(checkedItems.length > 0);
+          checkAll.prop('checked', checkedItems.length === checkItems.length);
+        })
+        .on('draw.dt', function(e) {
+          checkAll.prop('checked', false);
+        })
+        .DataTable({
+          processing: true,
+          serverSide: true,
+          columns: [{
+              data: 'checkbox',
+              orderable: false
+            },
+            {
+              data: 'date'
+            },
+            {
+              data: 'description'
+            },
+            {
+              data: 'receipts'
+            },
+            {
+              data: 'number_of_transactions'
+            },
+            {
+              data: 'payments'
+            },
+            {
+              data: 'currency'
+            },
+            {
+              data: 'reversals'
+            },
+            {
+              data: 'commissions'
+            },
+            {
+              data: 'balance'
+            },
+            {
+              data: 'month'
+            },
+            {
+              data: 'company'
+            },
+          ],
+          order: [1, 'asc'],
+          ajax: {
+            url: '/soa/data_list',
+            type: 'POST',
+            dataType: 'json',
+            data: d => {
+              d.f_soa_id = '<%= file._id %>';
+            },
+            error: data => {
+              console.log(data);
+            }
+          },
+          pageLength: 25,
+          autoWidth: false,
+          scrollX: true
+        });
+    });
+
+    
+    deleteBtn.on('click', function() {
+      const checkedItems = $('.check-item:checked');
+
+      if (checkedItems.length > 0) {
+        const title = checkedItems.length === 1 ? 'Do you want to delete this line?' : 'Do you want to delete these lines?';
+        Swal.fire({
+          title: title,
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Delete',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const ids = checkedItems.map(function() {
+              let row = datatable.row($(this).closest('tr'));
+              return row.data()._id;
+            }).get();
+
+            $.ajax({
+              url: '/soa/data_delete',
+              method: 'POST',
+              data: {
+                ids: ids
+              },
+              success: function(response) {
+                datatable.draw(false);
+                deleteBtn.hide();
+                Swal.fire({
+                  title: 'Rows deleted successfully',
+                  icon: 'success',
+                });
+              },
+              error: function(xhr, status, error) {
+                Swal.fire({
+                  title: 'Error deleting rows',
+                  text: xhr.responseText,
+                  icon: 'error',
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
