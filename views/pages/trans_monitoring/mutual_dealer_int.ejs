@@ -81,51 +81,61 @@
                       <th>No. of Senders</th>
                       <th>Currency </th>
                       <th>Amount </th>
-                      <th>Import FOB</th>
-                      <th>Import CIF</th>
+                      <th>Export FOB</th>
+                      <th>Export CIF</th>
                       <th>Total LOC </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
+                      <td>BCD</td>
+                      <td>191</td>
+                      <td>21</td>
+                      <td>USD</td>
+                      <td> 4,576,100.54 </td>
+                      <td> 3,050,733.69 </td>
+                      <td> 3,660,880.43 </td>
+                      <td> 2,542,278.08 </td>
                     </tr>
                     <tr>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
+                      <td>EFG</td>
+                      <td>102</td>
+                      <td>16</td>
+                      <td>EURO</td>
+                      <td> 2,453,715.24 </td>
+                      <td> 1,635,810.16 </td>
+                      <td> 1,962,972.19 </td>
+                      <td> 1,363,175.13 </td>
                     </tr>
                     <tr>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
+                      <td>HIJ</td>
+                      <td>219</td>
+                      <td>32</td>
+                      <td>AUD</td>
+                      <td>3,826,712.42</td>
+                      <td>2,551,141.61</td>
+                      <td>3,061,369.94</td>
+                      <td>2,125,951.34</td>
                     </tr>
                     <tr>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
-                      <td>2022-02-15 | 2022-03-15</td>
-                      <td>12,500.00</td>
-                      <td>1000.00</td>
-                      <td>100.00</td>
+                      <td>KLM</td>
+                      <td>182</td>
+                      <td>15</td>
+                      <td>CNY</td>
+                      <td>5,423,923.56</td>
+                      <td>3,615,949.04</td>
+                      <td>4,339,138.85</td>
+                      <td>3,013,290.87</td>
+                    </tr>
+                    <tr>
+                      <td>NOP</td>
+                      <td>232</td>
+                      <td>25</td>
+                      <td>CHF</td>
+                      <td>4,984,716.62</td>
+                      <td>3,323,144.41</td>
+                      <td>3,987,773.30</td>
+                      <td>2,769,287.01</td>
                     </tr>
                   </tbody>
                 </table>
@@ -166,6 +176,8 @@
 
       datatable = $objects['table']
         .DataTable();
+              $objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
+
 
     });
   </script>
