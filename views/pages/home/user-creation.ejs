@@ -76,18 +76,21 @@
           <%- include('../../partials/admin-nav'); -%>
           <div class="row">
             <div class="col-12">
-              <div class="page-title-box d-flex align-items-center gap-x-8">
-                <h4 class="page-title mr-3">User</h4>
-                <button
-                  onclick="openForm()"
-                  type="button"
-                  class="btn btn-outline-secondary h-25 px-4 mx-4"
-                >
-                  Create user
-                </button>
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item">
+                      <a href="/home/user">User Management</a>
+                    </li>
+                    <li class="breadcrumb-item active">User</li>
+                  </ol>
+                </div>
+                <h4 class="page-title">Users</h4>
               </div>
             </div>
           </div>
+
           <div class="p-3 mb-2 bg-white text-dark rounded">
             <table class="table table-striped" id="table">
               <thead>

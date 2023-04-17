@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Case Management - Details | gfca</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/gfca.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Case Management - Details | gfca </title>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-  <meta content="Coderthemes" name="author" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="/assets/images/gfca.png">
+    <!-- third party css -->
+    <link
+      href="/assets/css/vendor/jquery-jvectormap-1.2.2.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/vendor/dataTables.bootstrap5.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
-  <!-- third party css -->
-  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
-  <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- third party css end -->
 
-  <!-- third party css end -->
+    <!-- App css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
 
-  <!-- App css -->
-  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
 
-  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      .btn-xxl {
+        font-size: calc(2rem + 0.0012vw);
+        padding: 0.8rem 1rem;
+        width: 100%;
+        height: 100%;
+      }
 
-  <style type="text/css">
-    .btn-xxl {
-      font-size: calc(2rem + 0.0012vw);
-      padding: 0.8rem 1rem;
-      width: 100%;
-      height: 100%;
-    }
+      #table td {
+        padding: 1px;
+        font-size: 13px;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
 
-    #table td {
-      padding: 1px;
-      font-size: 13px;
-      font-family: "Courier New", Courier, monospace;
-    }
-  </style>
-</head>
+  <body
+    class="loading"
+    data-layout-color="light"
+    data-leftbar-theme="dark"
+    data-layout-mode="fluid"
+    data-rightbar-onstart="true"
+  >
+    <!-- Begin page -->
+    <div class="wrapper">
+      <%- include('../../partials/admin-side'); -%>
 
-<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
-  <!-- Begin page -->
-  <div class="wrapper">
-    <%- include('../../partials/admin-side'); -%>
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
+      <div class="content-page">
+        <div class="content">
+          <%- include('../../partials/admin-nav'); -%>
 
+<<<<<<< HEAD
     <div class="content-page">
       <div class="content">
         <%- include('../../partials/admin-nav'); -%>
@@ -161,58 +187,215 @@
 
                 </form>
 
+=======
+          <!-- Start Content-->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item">
+                      <a href="/home/cases">Case Management</a>
+                    </li>
+                    <li class="breadcrumb-item active">Cases</li>
+                  </ol>
+                </div>
+                <h4 class="page-title">Case Management</h4>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
+            </div>
+          </div>
+          <!-- end page title -->
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div
+                  class="card-header"
+                  style="display: flex; justify-content: flex-end"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#login-modal"
+                    style="margin-left: auto"
+                  >
+                    + New Case
+                  </button>
+                </div>
+                <div class="card-body">
+                  <table id="table" class="table text-center nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Targets</th>
+                        <th>Status</th>
+                        <th>Attachment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr role="button" class="case_man">
+                        <td>Unity Link</td>
+                        <td>2022-07-05</td>
+                        <td>GHC</td>
+                        <td>28,790</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-info view"
+                          >
+                            <i class="mdi mdi-eye"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr role="button" class="case_man">
+                        <td>MTN Ghana</td>
+                        <td>2022-11-26</td>
+                        <td>USD</td>
+                        <td>4,510</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-outline-info view"
+                          >
+                            <i class="mdi mdi-eye"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="login-modal"
+            class="modal fade"
+            tabindex="-1"
+            role="dialog"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="text-center mt-2 mb-4">
+                    <a href="index.html" class="text-success">
+                      <span
+                        ><img src="assets/images/gfca.png" alt="" height="40"
+                      /></span>
+                    </a>
+                  </div>
+
+                  <form action="#" class="ps-3 pe-3">
+                    <div class="mb-3">
+                      <label for="chosen-date">Subject</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter a subject"
+                        id="amount"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="select-position">Targets </label>
+                      <select
+                        class="form-control"
+                        id=""
+                        name="position-type"
+                        placeholder="Chose target"
+                      >
+                        <option value="">aaaaa</option>
+                        <option value="">aaaaaaa</option>
+                        <option value="">aaaaaaa</option>
+                        <option value="">aaaaaaa</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="chosen-date">Case Summary</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="chosen-date"
+                        name="chosen-date"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="file" class="form-label">Upload file</label>
+                      <input
+                        class="form-control"
+                        type="file"
+                        accept=".csv"
+                        id="file"
+                        onchange="checkfile(this);"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="select-position">Assigned to</label>
+                      <select class="form-control" id="" name="position-type">
+                        <option value="">aaaaa</option>
+                        <option value="">aaaaa</option>
+                        <option value="">aaaaaaa</option>
+                        <option value="">aaaaa</option>
+                      </select>
+                    </div>
+                    <div class="mb-3 text-center">
+                      <button
+                        class="btn rounded-pill btn-primary"
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+
+          <!-- container -->
         </div>
+        <!-- content -->
 
-        <!-- container -->
-
+        <%- include('../../partials/footer'); -%>
       </div>
-      <!-- content -->
 
-
-
-      <%- include('../../partials/footer'); -%>
-
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+    <%- include('../../partials/admin-layout'); -%>
+    <script type="text/javascript">
+      let $objects = {};
 
-  </div>
-  <!-- END wrapper -->
+      $(() => {
+        $objects["table"] = $("#table");
 
+        $objects["table"].DataTable();
+        let selectedRow = null;
+        let datatable = null;
 
-  <%- include('../../partials/admin-layout'); -%>
-  <script type="text/javascript">
-    let $objects = {};
+        datatable = $objects["table"].DataTable();
 
-    $(() => {
-      $objects['table'] = $('#table');
+        $(".case_man").click(function () {
+          // Get the value of the first cell (td) of the clicked row
+          var case_id = $(this).find("td:first").text();
 
-      $objects['table'].DataTable();
-      let selectedRow = null;
-      let datatable = null;
+          // Construct the URL with the case_id parameter
+          var url = "/case_mng/case_thread?case_id=" + case_id;
 
-      datatable = $objects['table']
-        .DataTable();
-
-      $('.case_man').click(function() {
-        // Get the value of the first cell (td) of the clicked row
-        var case_id = $(this).find('td:first').text();
-
-        // Construct the URL with the case_id parameter
-        var url = '/case_mng/case_thread?case_id=' + case_id;
-
-        // Redirect to the new URL
-        window.location.href = url;
+          // Redirect to the new URL
+          window.location.href = url;
+        });
       });
-
-    });
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>

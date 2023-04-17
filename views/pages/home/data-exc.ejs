@@ -1,81 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Data Exchange</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
     <meta content="Coderthemes" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/gfca.png">
+    <link rel="shortcut icon" href="/assets/images/gfca.png" />
 
     <!-- third party css -->
-    <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
-
+    <link
+      href="/assets/css/vendor/jquery-jvectormap-1.2.2.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/vendor/dataTables.bootstrap5.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- third party css end -->
 
     <!-- App css -->
     <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link
+      href="/assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
 
     <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
 
     <style type="text/css">
-        .btn-xxl {
-            font-size: calc(2rem + 0.0012vw);
-            padding: 0.8rem 1rem;
-            width: 100%;
-            height: 100%;
-        }
+      .btn-xxl {
+        font-size: calc(2rem + 0.0012vw);
+        padding: 0.8rem 1rem;
+        width: 100%;
+        height: 100%;
+      }
     </style>
+  </head>
 
-
-</head>
-
-<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid"
-    data-rightbar-onstart="true">
+  <body
+    class="loading"
+    data-layout-color="light"
+    data-leftbar-theme="dark"
+    data-layout-mode="fluid"
+    data-rightbar-onstart="true"
+  >
     <!-- Begin page -->
     <div class="wrapper">
-        <%- include('../../partials/admin-side'); -%>
-        
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-        
-        <div class="content-page px-4">
-            <div class="content">
-                <%- include('../../partials/admin-nav'); -%>
-                <div class="row">
-                    <div class="col-12">
-                      <div class="page-title-box">
-                       
-                        <h4 class="page-title">Data Exchange</h4>
-                      </div>
-                    </div>
-                  </div>
-            <div class="p-3 mb-2 bg-white text-dark rounded">
-            </div>
-                        <!-- Start Content-->
-                       
-                        <!-- container -->
+      <%- include('../../partials/admin-side'); -%>
 
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
+
+      <div class="content-page px-4">
+        <div class="content">
+          <%- include('../../partials/admin-nav'); -%>
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+
+                    <li class="breadcrumb-item active">Data Exchange</li>
+                  </ol>
                 </div>
-                <!-- content -->
-
-
-
-                <%- include('../../partials/footer'); -%>
-
+                <h4 class="page-title">Data Exchange</h4>
+              </div>
             </div>
+          </div>
+          <div class="p-3 mb-2 bg-white text-dark rounded"></div>
+          <!-- Start Content-->
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+          <!-- container -->
+        </div>
+        <!-- content -->
 
+        <%- include('../../partials/footer'); -%>
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
     <!-- END wrapper -->
 
@@ -93,91 +110,91 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
     <!-- third party js ends -->
 
     <script type="text/javascript">
-        let $objects = {};
-        $(() => {
-            $objects['file'] = $('#file');
-            $objects['submit'] = $('#submit');
+      let $objects = {};
+      $(() => {
+        $objects["file"] = $("#file");
+        $objects["submit"] = $("#submit");
 
-            $objects['submit'].click(function (e) {
-                e.preventDefault();
+        $objects["submit"].click(function (e) {
+          e.preventDefault();
 
-                // File presence checking
-                if (!$objects['file'].get(0).files.length) {
-                    $objects['file'].siblings('.invalid-feedback').html('Choose file');
-                    $objects['file'].removeClass('is-valid').addClass('is-invalid');
-                    return;
-                }
+          // File presence checking
+          if (!$objects["file"].get(0).files.length) {
+            $objects["file"].siblings(".invalid-feedback").html("Choose file");
+            $objects["file"].removeClass("is-valid").addClass("is-invalid");
+            return;
+          }
 
-                $objects['submit'].prop('disabled', true).html(`
+          $objects["submit"].prop("disabled", true).html(`
           Uploading <span id="upload_per"></span>
 					<div class="spinner-border spinner-border-sm text-light" role="status"></div>
 				`);
-                //$objects['back'].prop('disabled', true);
+          //$objects['back'].prop('disabled', true);
 
-                let $upload_per = $('#upload_per');
+          let $upload_per = $("#upload_per");
 
-                let fd = new FormData();
-                fd.append('file', $objects['file'].get(0).files[0]);
-                fd.append('category', '');
+          let fd = new FormData();
+          fd.append("file", $objects["file"].get(0).files[0]);
+          fd.append("category", "");
 
-                $.ajax({
-                    'url': `${process.env.API_BASEURL}/shop/load`,
-                    'type': 'POST',
-                    'data': fd,
-                    'dataType': 'json',
-                    'contentType': false,
-                    'processData': false,
-                    'success': result => {
-                        if (result.status == "success") {
-                            $objects['form'].find('.is-invalid').removeClass('is-invalid');
-                            Swal.fire({
-                                title: 'File sent',
-                                icon: "success"
-                            });
-
-                            location = '/dashboard';
-                        }
-                    },
-                    'error': result => {
-                        console.log(result.responseJSON.message);
-                        $o.submit.html('Upload');
-                    },
-                    'complete': result => {
-                        $objects['submit'].html('Upload').prop('disabled', false);
-                    }
-                });
-            });
-        });
-        function checkfile(sender) {
-            var validExts = new Array(".csv");
-            var fileExt = sender.value;
-            fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
-            if (validExts.indexOf(fileExt) < 0) {
+          $.ajax({
+            url: `${process.env.API_BASEURL}/shop/load`,
+            type: "POST",
+            data: fd,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: (result) => {
+              if (result.status == "success") {
+                $objects["form"].find(".is-invalid").removeClass("is-invalid");
                 Swal.fire({
-                    title: 'Invalid file selected, valid files are of ' + validExts.toString() + " types.",
-                    icon: "error"
+                  title: "File sent",
+                  icon: "success",
                 });
-                return false;
-            } else return true;
-        }
 
-        function truncate(str, limit) {
-            return str.length > limit ? str.substr(0, limit) + '&hellip;' : str;
-        }
+                location = "/dashboard";
+              }
+            },
+            error: (result) => {
+              console.log(result.responseJSON.message);
+              $o.submit.html("Upload");
+            },
+            complete: (result) => {
+              $objects["submit"].html("Upload").prop("disabled", false);
+            },
+          });
+        });
+      });
+      function checkfile(sender) {
+        var validExts = new Array(".csv");
+        var fileExt = sender.value;
+        fileExt = fileExt.substring(fileExt.lastIndexOf("."));
+        if (validExts.indexOf(fileExt) < 0) {
+          Swal.fire({
+            title:
+              "Invalid file selected, valid files are of " +
+              validExts.toString() +
+              " types.",
+            icon: "error",
+          });
+          return false;
+        } else return true;
+      }
 
-        $(() => {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        })
+      function truncate(str, limit) {
+        return str.length > limit ? str.substr(0, limit) + "&hellip;" : str;
+      }
+
+      $(() => {
+        $.ajaxSetup({
+          headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+          },
+        });
+      });
     </script>
-
-</body>
-
+  </body>
 </html>

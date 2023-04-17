@@ -1,79 +1,93 @@
 <div class="leftside-menu">
+  <!-- LOGO -->
+  <a href="/home" class="logo text-center logo-light">
+    <span class="logo-lg">
+      <img
+        class="h-20 mx-auto"
+        src="/assets/images/coa.png"
+        alt=""
+        height="85"
+      />
+      <!-- <img  class="h-20"  src="/assets/images/gfca.png" alt="" height="65"> -->
+    </span>
+  </a>
 
-    <!-- LOGO -->
-    <a href="/home" class="logo text-center logo-light">
-        <span class="logo-lg">
-            <img src="/assets/images/coa.png" alt="" height="85">
-            <!-- <img src="/assets/images/gfca.png" alt="" height="65"> -->
-        </span>
+  <!-- LOGO -->
+  <a href="/home" class="logo text-center logo-dark">
+    <span class="logo-lg">
+      <img class="" src="/assets/images/coa.png" alt="" height="85" />
+    </span>
+    <span class="logo-sm">
+      <img src="/assets/images/logo_sm_dark.png" alt="" height="16" />
+    </span>
+  </a>
 
-    </a>
+  <div class="h-100" id="leftside-menu-container" data-simplebar>
+    <!--- Sidemenu -->
+    <ul class="side-nav mt-2">
+      <li class="side-nav-title side-nav-item">Navigation</li>
 
-    <!-- LOGO -->
-    <a href="/home" class="logo text-center logo-dark">
-        <span class="logo-lg">
-            <img src="/assets/images/coa.png" alt="" height="85">
-        </span>
-        <span class="logo-sm">
-            <img src="/assets/images/logo_sm_dark.png" alt="" height="16">
-        </span>
-    </a>
+      <li class="side-nav-item">
+        <a href="/dashboard" class="side-nav-link">
+          <i class="mdi mdi-home"></i>
+          <span> Dashboard </span>
+        </a>
+      </li>
 
-    <div class="h-100" id="leftside-menu-container" data-simplebar>
-
-        <!--- Sidemenu -->
-        <ul class="side-nav">
-
-            <li class="side-nav-title side-nav-item">Navigation</li>
-
+      <li class="side-nav-item">
+        <a
+          data-bs-toggle="collapse"
+          href="#sidebarMultiLevel"
+          aria-expanded="false"
+          aria-controls="sidebarMultiLevel"
+          class="side-nav-link"
+        >
+          <i class="uil-folder-plus"></i>
+          <span> Data House </span>
+          <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="sidebarMultiLevel">
+          <ul class="side-nav-second-level">
             <li class="side-nav-item">
-                <a href="/dashboard" class="side-nav-link">
-                    <i class="mdi mdi-home"></i>
-                    <span> Dashboard </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarMultiLevel" aria-expanded="false"
-                    aria-controls="sidebarMultiLevel" class="side-nav-link">
-                    <i class="uil-folder-plus"></i>
-                    <span> Data House </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarMultiLevel">
-                    <ul class="side-nav-second-level">
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarThirdLevel" aria-expanded="false"
-                                aria-controls="sidebarThirdLevel">
-                                <span> Inputs </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarThirdLevel">
-                                <ul class="side-nav-third-level">
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Files </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="/shop/load?category=SWIFT">SWIFT</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/shop/load?category=BOE">BOE</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/shop/load?category=IDF">IDF</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!-- <li>
+              <a
+                data-bs-toggle="collapse"
+                href="#sidebarThirdLevel"
+                aria-expanded="false"
+                aria-controls="sidebarThirdLevel"
+              >
+                <span> Inputs </span>
+                <span class="menu-arrow"></span>
+              </a>
+              <div class="collapse" id="sidebarThirdLevel">
+                <ul class="side-nav-third-level">
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Files </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="/shop/load?category=SWIFT">SWIFT</a>
+                        </li>
+                        <li>
+                          <a href="/shop/load?category=BOE">BOE</a>
+                        </li>
+                        <li>
+                          <a href="/shop/load?category=IDF">IDF</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!-- <li>
                                         <a href="/ghipss/load">GHIPSS</a>
                                     </li> -->
-                                    <!-- <li class="side-nav-item">
+                  <!-- <li class="side-nav-item">
                                         <a data-bs-toggle="collapse" href="#sidebarFourthLevel3" aria-expanded="false"
                                             aria-controls="sidebarFourthLevel">
                                             <span>Retry </span>
@@ -81,22 +95,22 @@
                                         </a>
                                         <div class="collapse" id="sidebarFourthLevel3">
                                             <ul class="side-nav-forth-level"> -->
-                                    <!--<li>
+                  <!--<li>
                                                     <a href="/retry/load?category=Zenith+Bank+Gh">Zenith Bank Gh</a>
                                                 </li>-->
-                                    <!-- <li>
+                  <!-- <li>
                                                     <a href="/retry/load?category=Manual+push">Manual push</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li> -->
-                                    <!--<li>
+                  <!--<li>
                                         <a href="#">Treasury</a>
                                     </li>-->
-                                    <!-- <li>
+                  <!-- <li>
                                         <a href="/authorizations/load">Authorizations</a>
                                     </li> -->
-                                    <!-- <li class="side-nav-item">
+                  <!-- <li class="side-nav-item">
                                         <a data-bs-toggle="collapse" href="#sidebarFourthLevel5"
                                             aria-expanded="false" aria-controls="sidebarFourthLevel">
                                             <span>Statement Of Affairs </span>
@@ -113,350 +127,423 @@
                                             </ul>
                                         </div>
                                     </li> -->
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarMultiLevel1" aria-expanded="false"
-                                aria-controls="sidebarMultiLevel">
-                                <span> Data warehouse </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarMultiLevel1">
-                                <ul class="side-nav-third-level">
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel00" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Termination files </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel00">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="/shop/files?category=Dashboard">Dashboard</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/shop/files?category=Instant+money">Instant money</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/shop/files?category=Shop">Shop</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="/ghipss/files">GHIPSS</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel11" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Case Management </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel11">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Consolidated+payments">Consolidated
-                                                        payments</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Compensation">Compensation</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Dream+oval">Dream oval</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=MTN+Ghana">MTN Ghana</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Vodafone">Vodafone</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Airtel+Ghana">Airtel Ghana</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Etransact">Etransact</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Payswitch">Payswitch</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Origgin">Origgin</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Hub2">Hub2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Intourch+direct">Intourch direct</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=MFS+Africa">MFS Africa</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=MangoPay">MangoPay</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=SwervePay">SwervePay</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=MTN+Uganda">MTN Uganda</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Weloadly">Weloadly</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Trust">Trust</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Kazang">Kazang</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/pay_gw/files?category=Cyber+source">Cyber source</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel22" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Retry </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel22">
-                                            <ul class="side-nav-forth-level">
-                                                <!--<li>
-                                                    <a href="/retry/load?category=Zenith+Bank+Gh">Zenith Bank Gh</a>
-                                                </li>-->
-                                                <li>
-                                                    <a href="/retry/files?category=Manual+push">Manual push</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!--<li>
-                                        <a href="#">Treasury</a>
-                                    </li>-->
-                                    <li>
-                                        <a href="/authorizations/files">Authorizations</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel33" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Statement Of Affairs </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel33">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="/soa/files?category=New">New</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/soa/files?category=All">All</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarMultiLevel2" aria-expanded="false"
-                                aria-controls="sidebarThirdLevel">
-                                <span> Recycle Bin </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarMultiLevel2">
-                                <ul class="side-nav-third-level">
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel000" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Termination files </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel000">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="#">Dashboard</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Instant money</a>
-                                                </li>
-                                                <li>
-                                                    <a href="/shopfiles/bin">Shop</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#">GHIPSS</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel111" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Payments Gateways </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel111">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="#">Consolidated payments</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Compensation</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Dream oval</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">MTN Ghana</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Vodafone</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Airtel Ghana</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Etransact</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Payswitch</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Origgin</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Hub2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Intourch direct</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">MFS Africa</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">MangoPay</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">SwervePay</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">MTN Uganda</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Weloadly</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Trust</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Kazang</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Cyber source</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel222" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Retry </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel222">
-                                            <ul class="side-nav-forth-level">
-                                                <!--<li>
-                                                    <a href="/retry/load?category=Zenith+Bank+Gh">Zenith Bank Gh</a>
-                                                </li>-->
-                                                <li>
-                                                    <a href="#">Manual push</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <!--<li>
-                                        <a href="#">Treasury</a>
-                                    </li>-->
-                                    <li>
-                                        <a href="#">Authorizations</a>
-                                    </li>
-                                    <li class="side-nav-item">
-                                        <a data-bs-toggle="collapse" href="#sidebarFourthLevel333" aria-expanded="false"
-                                            aria-controls="sidebarFourthLevel">
-                                            <span>Statement Of Affairs </span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="sidebarFourthLevel333">
-                                            <ul class="side-nav-forth-level">
-                                                <li>
-                                                    <a href="#">New</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">All</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                </ul>
+              </div>
             </li>
-            <!-- <li class="side-nav-item">
+
+            <li class="side-nav-item">
+              <a
+                data-bs-toggle="collapse"
+                href="#sidebarMultiLevel1"
+                aria-expanded="false"
+                aria-controls="sidebarMultiLevel"
+              >
+                <span> Data warehouse </span>
+                <span class="menu-arrow"></span>
+              </a>
+              <div class="collapse" id="sidebarMultiLevel1">
+                <ul class="side-nav-third-level">
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel00"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Termination files </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel00">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="/shop/files?category=Dashboard">Dashboard</a>
+                        </li>
+                        <li>
+                          <a href="/shop/files?category=Instant+money"
+                            >Instant money</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/shop/files?category=Shop">Shop</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="/ghipss/files">GHIPSS</a>
+                  </li>
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel11"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Case Management </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel11">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="/pay_gw/files?category=Consolidated+payments"
+                            >Consolidated payments</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Compensation"
+                            >Compensation</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Dream+oval"
+                            >Dream oval</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=MTN+Ghana"
+                            >MTN Ghana</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Vodafone">Vodafone</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Airtel+Ghana"
+                            >Airtel Ghana</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Etransact"
+                            >Etransact</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Payswitch"
+                            >Payswitch</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Origgin">Origgin</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Hub2">Hub2</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Intourch+direct"
+                            >Intourch direct</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=MFS+Africa"
+                            >MFS Africa</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=MangoPay">MangoPay</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=SwervePay"
+                            >SwervePay</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=MTN+Uganda"
+                            >MTN Uganda</a
+                          >
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Weloadly">Weloadly</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Trust">Trust</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Kazang">Kazang</a>
+                        </li>
+                        <li>
+                          <a href="/pay_gw/files?category=Cyber+source"
+                            >Cyber source</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel22"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Retry </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel22">
+                      <ul class="side-nav-forth-level">
+                        <!--<li>
+                                                    <a href="/retry/load?category=Zenith+Bank+Gh">Zenith Bank Gh</a>
+                                                </li>-->
+                        <li>
+                          <a href="/retry/files?category=Manual+push"
+                            >Manual push</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--<li>
+                                        <a href="#">Treasury</a>
+                                    </li>-->
+                  <li>
+                    <a href="/authorizations/files">Authorizations</a>
+                  </li>
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel33"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Statement Of Affairs </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel33">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="/soa/files?category=New">New</a>
+                        </li>
+                        <li>
+                          <a href="/soa/files?category=All">All</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="side-nav-item">
+              <a
+                data-bs-toggle="collapse"
+                href="#sidebarMultiLevel2"
+                aria-expanded="false"
+                aria-controls="sidebarThirdLevel"
+              >
+                <span> Recycle Bin </span>
+                <span class="menu-arrow"></span>
+              </a>
+              <div class="collapse" id="sidebarMultiLevel2">
+                <ul class="side-nav-third-level">
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel000"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Termination files </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel000">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="#">Dashboard</a>
+                        </li>
+                        <li>
+                          <a href="#">Instant money</a>
+                        </li>
+                        <li>
+                          <a href="/shopfiles/bin">Shop</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">GHIPSS</a>
+                  </li>
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel111"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Payments Gateways </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel111">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="#">Consolidated payments</a>
+                        </li>
+                        <li>
+                          <a href="#">Compensation</a>
+                        </li>
+                        <li>
+                          <a href="#">Dream oval</a>
+                        </li>
+                        <li>
+                          <a href="#">MTN Ghana</a>
+                        </li>
+                        <li>
+                          <a href="#">Vodafone</a>
+                        </li>
+                        <li>
+                          <a href="#">Airtel Ghana</a>
+                        </li>
+                        <li>
+                          <a href="#">Etransact</a>
+                        </li>
+                        <li>
+                          <a href="#">Payswitch</a>
+                        </li>
+                        <li>
+                          <a href="#">Origgin</a>
+                        </li>
+                        <li>
+                          <a href="#">Hub2</a>
+                        </li>
+                        <li>
+                          <a href="#">Intourch direct</a>
+                        </li>
+                        <li>
+                          <a href="#">MFS Africa</a>
+                        </li>
+                        <li>
+                          <a href="#">MangoPay</a>
+                        </li>
+                        <li>
+                          <a href="#">SwervePay</a>
+                        </li>
+                        <li>
+                          <a href="#">MTN Uganda</a>
+                        </li>
+                        <li>
+                          <a href="#">Weloadly</a>
+                        </li>
+                        <li>
+                          <a href="#">Trust</a>
+                        </li>
+                        <li>
+                          <a href="#">Kazang</a>
+                        </li>
+                        <li>
+                          <a href="#">Cyber source</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel222"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Retry </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel222">
+                      <ul class="side-nav-forth-level">
+                        <!--<li>
+                                                    <a href="/retry/load?category=Zenith+Bank+Gh">Zenith Bank Gh</a>
+                                                </li>-->
+                        <li>
+                          <a href="#">Manual push</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--<li>
+                                        <a href="#">Treasury</a>
+                                    </li>-->
+                  <li>
+                    <a href="#">Authorizations</a>
+                  </li>
+                  <li class="side-nav-item">
+                    <a
+                      data-bs-toggle="collapse"
+                      href="#sidebarFourthLevel333"
+                      aria-expanded="false"
+                      aria-controls="sidebarFourthLevel"
+                    >
+                      <span>Statement Of Affairs </span>
+                      <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarFourthLevel333">
+                      <ul class="side-nav-forth-level">
+                        <li>
+                          <a href="#">New</a>
+                        </li>
+                        <li>
+                          <a href="#">All</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <!-- <li class="side-nav-item">
                 <a href="#" class="side-nav-link">
                     <i class="uil-box"></i>
                     <span> Recksoft </span>
                 </a>
             </li> -->
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCaseManagement" aria-expanded="false"
-                    aria-controls="sidebarCaseManagement" class="side-nav-link">
-                    <i class="uil-clipboard-alt"></i>
-                    <span>Case Management </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarCaseManagement">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="/pay_gw/load?category=Customs">Customs</a>
-                        </li>
-                        <li>
-                            <a href="/pay_gw/load?category=EOCO">EOCO</a>
-                        </li>
-                        <li>
-                            <a href="/pay_gw/load?category=MoT">MoT</a>
-                        </li>
-                        <li>
-                            <a href="/pay_gw/load?category=MoF">MoF</a>
-                        </li>
-                        <li>
-                            <a href="/pay_gw/load?category=MIC">MIC</a>
-                        </li>
-                    </ul>
-                </div>
+      <li class="side-nav-item">
+        <a
+          data-bs-toggle="collapse"
+          href="#sidebarCaseManagement"
+          aria-expanded="false"
+          aria-controls="sidebarCaseManagement"
+          class="side-nav-link"
+        >
+          <i class="uil-clipboard-alt"></i>
+          <span>Case Management </span>
+          <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="sidebarCaseManagement">
+          <ul class="side-nav-second-level">
+            <li>
+              <a href="/pay_gw/load?category=Customs">Customs</a>
             </li>
-            <li class="side-nav-item">
-                <a href="/position" class="side-nav-link">
-                    <i class="uil-box"></i>
-                    <span> Positions </span>
-                </a>
+            <li>
+              <a href="/pay_gw/load?category=EOCO">EOCO</a>
             </li>
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarTasks" aria-expanded="false" aria-controls="sidebarTasks"
-                    class="side-nav-link">
-                    <i class="uil-layer-group"></i>
-                    <span> AI Queries </span>
-                    <!-- <span class="menu-arrow"></span> -->
-                </a>
-                <!-- <div class="collapse" id="sidebarTasks">
+            <li>
+              <a href="/pay_gw/load?category=MoT">MoT</a>
+            </li>
+            <li>
+              <a href="/pay_gw/load?category=MoF">MoF</a>
+            </li>
+            <li>
+              <a href="/pay_gw/load?category=MIC">MIC</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="side-nav-item">
+        <a href="/position" class="side-nav-link">
+          <i class="uil-box"></i>
+          <span> Positions </span>
+        </a>
+      </li>
+      <li class="side-nav-item">
+        <a
+          data-bs-toggle="collapse"
+          href="#sidebarTasks"
+          aria-expanded="false"
+          aria-controls="sidebarTasks"
+          class="side-nav-link"
+        >
+          <i class="uil-layer-group"></i>
+          <span> AI Queries </span>
+          <!-- <span class="menu-arrow"></span> -->
+        </a>
+        <!-- <div class="collapse" id="sidebarTasks">
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="/ai_query/unauthorized_pay">Unauthorized payouts</a>
@@ -469,15 +556,20 @@
                         </li>
                     </ul>
                 </div> -->
-            </li>
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebartatistical" aria-expanded="false"
-                    aria-controls="sidebartatistical" class="side-nav-link">
-                    <i class="uil-clipboard-alt"></i>
-                    <span> Statistical reports </span>
-                    <!-- <span class="menu-arrow"></span> -->
-                </a>
-                <!-- <div class="collapse" id="sidebartatistical">
+      </li>
+      <li class="side-nav-item">
+        <a
+          data-bs-toggle="collapse"
+          href="#sidebartatistical"
+          aria-expanded="false"
+          aria-controls="sidebartatistical"
+          class="side-nav-link"
+        >
+          <i class="uil-clipboard-alt"></i>
+          <span> Statistical reports </span>
+          <!-- <span class="menu-arrow"></span> -->
+        </a>
+        <!-- <div class="collapse" id="sidebartatistical">
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="/statistical_report/soa_val">SOA validation</a>
@@ -493,8 +585,8 @@
                         </li>
                     </ul>
                 </div> -->
-            </li>
-            <!-- <li class="side-nav-item">
+      </li>
+      <!-- <li class="side-nav-item">
                 <a href="/swift_entry" class="side-nav-link">
                     <i class="uil-box"></i>
                     <span> SWIFT entries </span>
@@ -506,8 +598,8 @@
                     <span> Authorization entries </span>
                 </a>
             </li> -->
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-    <!-- Sidebar -left -->
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+  <!-- Sidebar -left -->
 </div>

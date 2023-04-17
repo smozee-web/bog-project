@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Transaction Monitoring - CBs LOC | gfca</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/gfca.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Transaction Monitoring - CBs LOC | gfca </title>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-  <meta content="Coderthemes" name="author" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="/assets/images/gfca.png">
+    <!-- third party css -->
+    <link
+      href="/assets/css/vendor/jquery-jvectormap-1.2.2.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/vendor/dataTables.bootstrap5.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
-  <!-- third party css -->
-  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
-  <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- third party css end -->
 
-  <!-- third party css end -->
+    <!-- App css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
 
-  <!-- App css -->
-  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
 
-  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      .btn-xxl {
+        font-size: calc(2rem + 0.0012vw);
+        padding: 0.8rem 1rem;
+        width: 100%;
+        height: 100%;
+      }
 
-  <style type="text/css">
-    .btn-xxl {
-      font-size: calc(2rem + 0.0012vw);
-      padding: 0.8rem 1rem;
-      width: 100%;
-      height: 100%;
-    }
+      #table td {
+        padding: 1px;
+        font-size: 13px;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
 
-    #table td {
-      padding: 1px;
-      font-size: 13px;
-      font-family: "Courier New", Courier, monospace;
-    }
-  </style>
-</head>
+  <body
+    class="loading"
+    data-layout-color="light"
+    data-leftbar-theme="dark"
+    data-layout-mode="fluid"
+    data-rightbar-onstart="true"
+  >
+    <!-- Begin page -->
+    <div class="wrapper">
+      <%- include('../../partials/admin-side'); -%>
 
-<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
-  <!-- Begin page -->
-  <div class="wrapper">
-    <%- include('../../partials/admin-side'); -%>
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
+      <div class="content-page">
+        <div class="content">
+          <%- include('../../partials/admin-nav'); -%>
 
+<<<<<<< HEAD
     <div class="content-page">
       <div class="content">
         <%- include('../../partials/admin-nav'); -%>
@@ -133,30 +159,132 @@
                     </tr>                                
                   </tbody>
                 </table>
+=======
+          <!-- Start Content-->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item">
+                      <a href="/home/monitoring">Transaction Monitoring</a>
+                    </li>
+                    <li class="breadcrumb-item active">CB Compliance - LOC</li>
+                  </ol>
+                </div>
+                <h4 class="page-title">
+                  Commercial Banks (CBs) Compliance - LOC
+                </h4>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
             </div>
           </div>
+          <!-- end page title -->
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <table id="table" class="table text-center nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Name of Bank</th>
+                        <th>No. of Transactions</th>
+                        <th>Currency</th>
+                        <th>Total Transferred</th>
+                        <th>Total LOC</th>
+                        <th>Total Export FOB</th>
+                        <th>otal Export CIF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022-02-15 | 2022-03-15</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                      </tr>
+                      <tr>
+                        <td>2022-02-15 | 2022-03-15</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                      </tr>
+                      <tr>
+                        <td>2022-02-15 | 2022-03-15</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                      </tr>
+                      <tr>
+                        <td>2022-02-15 | 2022-03-15</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                      </tr>
+                      <tr>
+                        <td>2022-02-15 | 2022-03-15</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                      </tr>
+                      <tr>
+                        <td>2022-02-15 | 2022-03-15</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                        <td>12,500.00</td>
+                        <td>1000.00</td>
+                        <td>100.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- container -->
         </div>
+        <!-- content -->
 
-        <!-- container -->
-
+        <%- include('../../partials/footer'); -%>
       </div>
-      <!-- content -->
 
-
-
-      <%- include('../../partials/footer'); -%>
-
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+    <%- include('../../partials/admin-layout'); -%>
+    <script type="text/javascript">
+      let $objects = {};
 
-  </div>
-  <!-- END wrapper -->
+      $(() => {
+        $objects["table"] = $("#table");
 
+        $objects["table"].DataTable();
+        let selectedRow = null;
+        let datatable = null;
 
+<<<<<<< HEAD
   <%- include('../../partials/admin-layout'); -%>
   <script type="text/javascript">
     let $objects = {};
@@ -177,3 +305,10 @@ $objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
 </body>
 
 </html>
+=======
+        datatable = $objects["table"].DataTable();
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
