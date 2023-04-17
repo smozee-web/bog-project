@@ -1,63 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Watchlist Screening</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
-      name="description"
-    />
-    <meta content="Coderthemes" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/gfca.png" />
 
-    <!-- third party css -->
-    <link
-      href="/assets/css/vendor/jquery-jvectormap-1.2.2.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="/assets/css/vendor/dataTables.bootstrap5.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>Watchlist Screening</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Coderthemes" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/gfca.png">
 
-    <!-- third party css end -->
+  <!-- third party css -->
+  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
 
-    <!-- App css -->
-    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link
-      href="/assets/css/app.min.css"
-      rel="stylesheet"
-      type="text/css"
-      id="app-style"
-    />
 
-    <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+  <!-- third party css end -->
 
-    <style type="text/css">
-      .btn-xxl {
-        font-size: calc(2rem + 0.0012vw);
-        padding: 0.8rem 1rem;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-  </head>
+  <!-- App css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
-  <body
-    class="loading"
-    data-layout-color="light"
-    data-leftbar-theme="dark"
-    data-layout-mode="fluid"
-    data-rightbar-onstart="true"
-  >
-    <!-- Begin page -->
-    <div class="wrapper">
-      <%- include('../../partials/admin-side'); -%>
+  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    .btn-xxl {
+      font-size: calc(2rem + 0.0012vw);
+      padding: 0.8rem 1rem;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+
+</head>
+
+<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid"
+  data-rightbar-onstart="true">
+  <!-- Begin page -->
+  <div class="wrapper">
+    <%- include('../../partials/admin-side'); -%>
 
       <!-- ============================================================== -->
       <!-- Start Page Content here -->
@@ -66,557 +49,556 @@
       <div class="content-page px-4">
         <div class="content">
           <%- include('../../partials/admin-nav'); -%>
-          <div class="col-12">
-            <div class="page-title-box">
-              <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                  <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                  <li class="breadcrumb-item">
-                    <a href="/home/watchlist">Watchlist Screening</a>
-                  </li>
+            <div class="row">
+              <div class="col-12">
+                <div class="page-title-box">
 
-                  <li class="breadcrumb-item active">Details</li>
-                </ol>
-              </div>
-              <h4 class="page-title">Watchlist Screening Details</h4>
-            </div>
-          </div>
-          <!-- Start Content-->
-          <div class="p-3 mb-2 bg-white text-dark rounded">
-            <h4>Search result for : <%= search_element %></h4>
-          </div>
-          <div class="row">
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Shareholders</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>TIN</th>
-                        <th>Address</th>
-                        <th>Contact</th>
-                        <th>Name</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-<<<<<<< HEAD
-              <div class="card-body">
-                <table id="sending_data" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th>TIN</th>
-                      <th>Contact</th>
-                      <th>Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>C0023876537</td>
-                      <td>244983726</td>
-                      <td>KOJO ASARE</td>
-                    </tr>
-                    <tr>
-                      <td>C0124876537</td>
-                      <td>533982038</td>
-                      <td>GINO</td>
-                    </tr>
-                    <tr>
-                      <td>C0146876537</td>
-                      <td>209874625</td>
-                      <td>DESMOND SEI</td>
-                    </tr>
-                    <tr>
-                      <td>C0423876537</td>
-                      <td>579238293</td>
-                      <td>PETER AKUA</td>
-                    </tr>
-                    <tr>
-                      <td>C0985876537</td>
-                      <td>263877129</td>
-                      <td>TASTY</td>
-                    </tr>
-                  </tbody>
-                </table>
-=======
-            </div>
-
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Bank details</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Bank Name</th>
-                        <th>Account Name</th>
-                        <th>Account Number</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
-              </div>
-            </div>
-          </div>
-
-<<<<<<< HEAD
-          <div class="col-xl-6">
-            <div class="card">
-              <div class="card-header" >
-                <h4 class="header-title">Bank details</h4>
-              </div>
-              <div class="card-body">
-                <table id="sending_data" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th>Bank Name</th>
-                      <th>Account Name</th>
-                      <th>Account Number</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>BOG</td>
-                      <td>Belk, Inc.</td>
-                      <td>43425729102</td>
-                    </tr>
-                    <tr>
-                      <td>GCB</td>
-                      <td>Centex.Corp</td>
-                      <td>29832791923</td>
-                    </tr>
-                    <tr>
-                      <td>ABSA</td>
-                      <td>Harris Corp</td>
-                      <td>29278924681</td>
-                    </tr>
-                    <tr>
-                      <td>NIB</td>
-                      <td>Manor Care Inc</td>
-                      <td>62479313673</td>
-                    </tr>
-                    <tr>
-                      <td>UBA</td>
-                      <td>PepsiCo Inc</td>
-                      <td>21932346122</td>
-                    </tr>
-                  </tbody>
-                </table>
-=======
-          <div class="row">
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Associates</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>TIN</th>
-                        <th>Contact</th>
-                        <th>Name</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
-              </div>
-            </div>
-
-<<<<<<< HEAD
-        <div class="row"><div class="col-xl-6">
-            <div class="card">
-              <div class="card-header" >
-                <h4 class="header-title">Directors</h4>
-              </div>
-              <div class="card-body">
-                <table id="sending_data" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>                      
-                      <th>Name</th>
-                      <th>TIN</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>KOJO ASARE</td>
-                      <td>P012284712939</td>
-                    </tr>
-                    <tr>
-                      <td>JOJO SEI</td>
-                      <td>P012887673278</td>
-                    </tr>
-                    <tr>
-                      <td>AKUA ALHASSAN</td>
-                      <td>P013870938720</td>
-                    </tr>
-                    <tr>
-                      <td>PETER JOO</td>
-                      <td>P019847863321</td>
-                    </tr>
-                    <tr>
-                      <td>PETERSON ADJOA</td>
-                      <td>P018973290782</td>
-                    </tr>                    
-                  </tbody>
-                </table>
-=======
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Directors</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Account Number</th>
-                        <th>TINs</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
-              </div>
-            </div>
-          </div>
-
-<<<<<<< HEAD
-          <div class="col-xl-6">
-            <div class="card">
-              <div class="card-header" >
-                <h4 class="header-title">Associates</h4>
-              </div>
-              <div class="card-body">
-                <table id="sending_data" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th>TIN</th>
-                      <th>Contact</th>
-                      <th>Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>C0023876426</td>
-                      <td>(0)244198763</td>
-                      <td>Belk, Inc.</td>
-                    </tr>
-                    <tr>
-                      <td>C0124812639</td>
-                      <td>(0)537379236</td>
-                      <td>Centex.Corp</td>
-                    </tr>
-                    <tr>
-                      <td>C0146212900</td>
-                      <td>(0)266672799</td>
-                      <td>Harris Corp</td>
-                    </tr>
-                    <tr>
-                      <td>C0492183702</td>
-                      <td>(0)567873920</td>
-                      <td>Manor Care Inc</td>
-                    </tr>
-                    <tr>
-                      <td>C0985876537</td>
-                      <td>(0)546378981</td>
-                      <td>PepsiCo Inc</td>
-                    </tr>
-                  </tbody>
-                </table>
-=======
-          <div class="row">
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Export details</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>BOE dates</th>
-                        <th>Currency</th>
-                        <th>FOB</th>
-                        <th>CIF</th>
-                        <th>destination country</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
-              </div>
-            </div>
-
-<<<<<<< HEAD
-        <div class="row">
-          <div class="col-xl-6">
-            <div class="card">
-              <div class="card-header" >
-                <h4 class="header-title">Export details</h4>
-              </div>
-              <div class="card-body">
-                <table id="sending_data" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>BOE dates</th>
-                      <th>Currency</th>
-                      <th>FOB </th>
-                      <th>CIF  </th>
-                      <th>destination country</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                      
-                  </tbody>
-                </table>
-=======
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Import details</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>BOE dates</th>
-                        <th>Currency</th>
-                        <th>FOB</th>
-                        <th>CIF</th>
-                        <th>country of origin</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
-              </div>
-              <div class="card-footer text-center">
-                <p>No data</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Transfers</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>bank</th>
-                        <th>No. of Transactions</th>
-                        <th>Currency</th>
-                        <th>Amounts</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <h4 class="page-title">Watchlist Screening Details</h4>
                 </div>
               </div>
             </div>
-
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">Funds received</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>bank</th>
-                        <th>No. of Transactions</th>
-                        <th>Currency</th>
-                        <th>Amounts</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <!-- Start Content-->
+            <div class="p-3 mb-2 bg-white text-dark rounded">
+              <h4>Search result for : <%= search_element %>
+              </h4>
+            </div>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Shareholders</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>TIN</th>
+                          <th>Address</th>
+                          <th>Contact</th>
+                          <th>Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>C0023876537</td>
+                          <td></td>
+                          <td>244983726</td>
+                          <td>KOJO ASARE</td>
+                        </tr>
+                        <tr>
+                          <td>C0124876537</td>
+                          <td></td>
+                          <td>533982038</td>
+                          <td>GINO</td>
+                        </tr>
+                        <tr>
+                          <td>C0146876537</td>
+                          <td></td>
+                          <td>209874625</td>
+                          <td>DESMOND SEI</td>
+                        </tr>
+                        <tr>
+                          <td>C0423876537</td>
+                          <td></td>
+                          <td>579238293</td>
+                          <td>PETER AKUA</td>
+                        </tr>
+                        <tr>
+                          <td>C0985876537</td>
+                          <td></td>
+                          <td>263877129</td>
+                          <td>TASTY</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Bank details</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Bank Name</th>
+                          <th>Account Name</th>
+                          <th>Account Number</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Bank of Ghana</td>
+                          <td>Belk, Inc.</td>
+                          <td>43425729102</td>
+                        </tr>
+                        <tr>
+                          <td>Ghana Commercial Bank</td>
+                          <td>Centex.Corp</td>
+                          <td>29832791923</td>
+                        </tr>
+                        <tr>
+                          <td>ABSA</td>
+                          <td>Harris Corp</td>
+                          <td>29278924681</td>
+                        </tr>
+                        <tr>
+                          <td>National Investment Bank</td>
+                          <td>Manor Care Inc</td>
+                          <td>62479313673</td>
+                        </tr>
+                        <tr>
+                          <td>United Bank for Africa</td>
+                          <td>PepsiCo Inc</td>
+                          <td>21932346122</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
 
-          <div class="row">
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">LOC</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Date</th>
-                        <th>BOE Number</th>
-                        <th>No. of Transactions</th>
-                        <th>BOE Date</th>
-                        <th>Currency</th>
-                        <th>FOB</th>
-                        <th>CIF</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
               </div>
             </div>
 
-            <div class="col-xl-6">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="header-title">IDF</h4>
-                </div>
-                <div class="card-body">
-                  <table
-                    id="sending_data"
-                    class="table text-center nowrap w-100"
-                  >
-                    <thead>
-                      <tr>
-                        <th>Date</th>
-                        <th>BOE Number</th>
-                        <th>No. of Transactions</th>
-                        <th>BOE Date</th>
-                        <th>Currency</th>
-                        <th>FOB</th>
-                        <th>CIF</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aaaa</td>
-                        <td>aaaaaaaa</td>
-                        <td>aaa</td>
-                        <td>aa</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Associates</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>TIN</th>
+                          <th>Contact</th>
+                          <th>Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>C0023876426</td>
+                          <td>(0)244198763</td>
+                          <td>Belk, Inc.</td>
+                        </tr>
+                        <tr>
+                          <td>C0124812639</td>
+                          <td>(0)537379236</td>
+                          <td>Centex.Corp</td>
+                        </tr>
+                        <tr>
+                          <td>C0146212900</td>
+                          <td>(0)266672799</td>
+                          <td>Harris Corp</td>
+                        </tr>
+                        <tr>
+                          <td>C0492183702</td>
+                          <td>(0)567873920</td>
+                          <td>Manor Care Inc</td>
+                        </tr>
+                        <tr>
+                          <td>C0985876537</td>
+                          <td>(0)546378981</td>
+                          <td>PepsiCo Inc</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Directors</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <!-- <th>Account Number</th> -->
+                          <th>TINs</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Kojo Asare</td>
+                          <!-- <td>NA</td> -->
+                          <td>P012284712939</td>
+                        </tr>
+                        <tr>
+                          <td>Jojo Sei</td>
+                          <!-- <td>NA</td> -->
+                          <td>P012887673278</td>
+                        </tr>
+                        <tr>
+                          <td>Akua Alhassan</td>
+                          <!-- <td>NA</td> -->
+                          <td>P013870938720</td>
+                        </tr>
+                        <tr>
+                          <td>Peter Joo</td>
+                          <!-- <td>NA</td> -->
+                          <td>P019847863321</td>
+                        </tr>
+                        <tr>
+                          <td>Peterson Adjoa</td>
+                          <!-- <td>NA</td> -->
+                          <td>P018973290782</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Export details</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>BOE dates</th>
+                          <th>Currency</th>
+                          <th>FOB </th>
+                          <th>CIF </th>
+                          <th>destination country</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="card-footer text-center">
+                    <p>No data</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Import details</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>BOE dates</th>
+                          <th>Currency</th>
+                          <th>FOB</th>
+                          <th>CIF</th>
+                          <th>Country of Origin</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>23/04/2020</td>
+                          <td>USD</td>
+                          <td>4 026 541,04</td>
+                          <td>4 314 151,11</td>
+                          <td>UNITED STATES</td>
+                        </tr>
+                        <tr>
+                          <td>14/09/2021</td>
+                          <td>EUR</td>
+                          <td>4 462 683,68</td>
+                          <td>4 781 446,80</td>
+                          <td>EUROPE</td>
+                        </tr>
+                        <tr>
+                          <td>12/10/2020</td>
+                          <td>JPY</td>
+                          <td>2 750 334,03</td>
+                          <td>2 946 786,47</td>
+                          <td>JAPAN</td>
+                        </tr>
+                        <tr>
+                          <td>20/06/2021</td>
+                          <td>EUR</td>
+                          <td>5 411 168,18</td>
+                          <td>5 797 680,20</td>
+                          <td>FRANCE</td>
+                        </tr>
+                        <tr>
+                          <td>20/05/2021</td>
+                          <td>NZD</td>
+                          <td>7 448 760,54</td>
+                          <td>7 980 814,86</td>
+                          <td>NEW ZEALAND</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Transfers</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Bank</th>
+                          <th>No. of Transactions</th>
+                          <th>Currency</th>
+                          <th>Amounts</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>GCB</td>
+                          <td>276</td>
+                          <td>USD</td>
+                          <td>3 314 151.11</td>
+                        </tr>
+                        <tr>
+                          <td>BOG</td>
+                          <td>372</td>
+                          <td>EUR</td>
+                          <td>3 781 446.80</td>
+                        </tr>
+                        <tr>
+                          <td>ABSA</td>
+                          <td>198</td>
+                          <td>CHF</td>
+                          <td>2 946 786.47</td>
+                        </tr>
+                        <tr>
+                          <td>UBA</td>
+                          <td>423</td>
+                          <td>JPY</td>
+                          <td>4 797 680.20</td>
+                        </tr>
+                        <tr>
+                          <td>NIB</td>
+                          <td>315</td>
+                          <td>NZD</td>
+                          <td>6 980 814.86</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">Funds received</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="funds_received" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Bank</th>
+                          <th>No. of Transactions</th>
+                          <th>Currency</th>
+                          <th>Amounts</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>BOG</td>
+                          <td>274</td>
+                          <td>USD</td>
+                          <td>3,314,151.11</td>
+                        </tr>
+                        <tr>
+                          <td>GCB</td>
+                          <td>321</td>
+                          <td>EUR</td>
+                          <td>3,781,446.80</td>
+                        </tr>
+                        <tr>
+                          <td>ABSA</td>
+                          <td>542</td>
+                          <td>CHF</td>
+                          <td>2,946,786.47</td>
+                        </tr>
+                        <tr>
+                          <td>NIB</td>
+                          <td>657</td>
+                          <td>JPY</td>
+                          <td>4,797,680.20</td>
+                        </tr>
+                        <tr>
+                          <td>UBA</td>
+                          <td>689</td>
+                          <td>NZD</td>
+                          <td>6,980,814.86</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">LOC</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>BOE Number</th>
+                          <th>No. of Transactions</th>
+                          <th>BOE Date</th>
+                          <th>Currency</th>
+                          <th>FOB</th>
+                          <th>CIF</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>12/03/2020</td>
+                          <td>40403561228</td>
+                          <td>439</td>
+                          <td>23/03/2020</td>
+                          <td>USD</td>
+                          <td>4 026 541,04</td>
+                          <td>4 831 849,24</td>
+                        </tr>
+                        <tr>
+                          <td>23/09/2020</td>
+                          <td>40478632659</td>
+                          <td>387</td>
+                          <td>26/09/2020</td>
+                          <td>EUR</td>
+                          <td>4 462 683,68</td>
+                          <td>5 355 220,42</td>
+                        </tr>
+                        <tr>
+                          <td>20/10/2020</td>
+                          <td>40473649213</td>
+                          <td>287</td>
+                          <td>23/10/2020</td>
+                          <td>CHF</td>
+                          <td>2 750 334,03</td>
+                          <td>3 300 400,84</td>
+                        </tr>
+                        <tr>
+                          <td>16/07/2020</td>
+                          <td>40434524526</td>
+                          <td>329</td>
+                          <td>18/08/2020</td>
+                          <td>JPY</td>
+                          <td>5 411 168,18</td>
+                          <td>6 493 401,82</td>
+                        </tr>
+                        <tr>
+                          <td>19/08/2020</td>
+                          <td>40403827461</td>
+                          <td>298</td>
+                          <td>20/09/2020</td>
+                          <td>NZD</td>
+                          <td>7 448 760,54</td>
+                          <td>8 938 512,64</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="header-title">IDF</h4>
+                  </div>
+                  <div class="card-body">
+                    <table id="sending_data" class="table text-center nowrap w-100">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>BOE Number</th>
+                          <th>No. of Transactions</th>
+                          <th>BOE Date</th>
+                          <th>Currency</th>
+                          <th>FOB</th>
+                          <th>CIF</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>12/03/2020</td>
+                          <td>40403561228</td>
+                          <td>439</td>
+                          <td>23/03/2020</td>
+                          <td>USD</td>
+                          <td>4 426 541,04</td>
+                          <td>5 311 849,24</td>
+                        </tr>
+                        <tr>
+                          <td>23/09/2020</td>
+                          <td>40478632659</td>
+                          <td>387</td>
+                          <td>26/09/2020</td>
+                          <td>EUR</td>
+                          <td>4 662 683,68</td>
+                          <td>5 595 220,42</td>
+                        </tr>
+                        <tr>
+                          <td>20/10/2020</td>
+                          <td>40473649213</td>
+                          <td>287</td>
+                          <td>23/10/2020</td>
+                          <td>CHF</td>
+                          <td>2 450 334,03</td>
+                          <td>2 940 400,84</td>
+                        </tr>
+                        <tr>
+                          <td>16/07/2020</td>
+                          <td>40434524526</td>
+                          <td>329</td>
+                          <td>18/08/2020</td>
+                          <td>JPY</td>
+                          <td>5 211 168,18</td>
+                          <td>6 253 401,82</td>
+                        </tr>
+                        <tr>
+                          <td>19/08/2020</td>
+                          <td>40403827461</td>
+                          <td>298</td>
+                          <td>20/09/2020</td>
+                          <td>NZD</td>
+                          <td>6 448 760,54</td>
+                          <td>7 738 512,64</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <!-- <div class="row">
           <div class="col-xl-6">
             <div class="card">
               <div class="card-header" >
@@ -672,47 +654,57 @@
           </div>
         </div> -->
 
-          <!-- container -->
+            <!-- container -->
+
         </div>
         <!-- content -->
 
+
+
         <%- include('../../partials/footer'); -%>
+
       </div>
 
       <!-- ============================================================== -->
       <!-- End Page content -->
       <!-- ============================================================== -->
-    </div>
-    <!-- END wrapper -->
 
-    <!-- bundle -->
-    <script src="/assets/js/vendor.min.js"></script>
-    <script src="/assets/js/app.min.js"></script>
+  </div>
+  <!-- END wrapper -->
 
-    <!-- third party js -->
-    <script src="/assets/js/vendor/apexcharts.min.js"></script>
-    <script src="/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- bundle -->
+  <script src="/assets/js/vendor.min.js"></script>
+  <script src="/assets/js/app.min.js"></script>
 
-    <script src="/assets/js/vendor/jquery.dataTables.min.js"></script>
-    <script src="/assets/js/vendor/dataTables.bootstrap5.js"></script>
+  <!-- third party js -->
+  <script src="/assets/js/vendor/apexcharts.min.js"></script>
+  <script src="/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/assets/js/vendor/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/vendor/dataTables.bootstrap5.js"></script>
 
-    <!-- third party js ends -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script type="text/javascript">
-      let $objects = {};
 
-      $(() => {
-        $objects["table"] = $("#table");
+  <!-- third party js ends -->
 
-        $objects["table"].DataTable();
-        let selectedRow = null;
-        let datatable = null;
+  <script type="text/javascript">
+    let $objects = {};
 
-        datatable = $objects["table"].DataTable();
-      });
-    </script>
-  </body>
+    $(() => {
+      $objects['table'] = $('#table');
+
+      $objects['table'].DataTable();
+      let selectedRow = null;
+      let datatable = null;
+
+      datatable = $objects['table']
+        .DataTable();
+
+    });
+  </script>
+
+</body>
+
 </html>
