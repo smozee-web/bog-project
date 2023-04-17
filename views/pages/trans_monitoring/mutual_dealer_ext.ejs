@@ -1,168 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Transaction Monitoring - MDE | gfca</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/gfca.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Transaction Monitoring - MDE | gfca </title>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-  <meta content="Coderthemes" name="author" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="/assets/images/gfca.png">
+    <!-- third party css -->
+    <link
+      href="/assets/css/vendor/jquery-jvectormap-1.2.2.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/vendor/dataTables.bootstrap5.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
-  <!-- third party css -->
-  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
-  <!--  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- third party css end -->
 
-  <!-- third party css end -->
+    <!-- App css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
 
-  <!-- App css -->
-  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
 
-  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      .btn-xxl {
+        font-size: calc(2rem + 0.0012vw);
+        padding: 0.8rem 1rem;
+        width: 100%;
+        height: 100%;
+      }
 
-  <style type="text/css">
-    .btn-xxl {
-      font-size: calc(2rem + 0.0012vw);
-      padding: 0.8rem 1rem;
-      width: 100%;
-      height: 100%;
-    }
+      #table td {
+        padding: 1px;
+        font-size: 13px;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
 
-    #table td {
-      padding: 1px;
-      font-size: 13px;
-      font-family: "Courier New", Courier, monospace;
-    }
-  </style>
-</head>
+  <body
+    class="loading"
+    data-layout-color="light"
+    data-leftbar-theme="dark"
+    data-layout-mode="fluid"
+    data-rightbar-onstart="true"
+  >
+    <!-- Begin page -->
+    <div class="wrapper">
+      <%- include('../../partials/admin-side'); -%>
 
-<body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
-  <!-- Begin page -->
-  <div class="wrapper">
-    <%- include('../../partials/admin-side'); -%>
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
+      <div class="content-page">
+        <div class="content">
+          <%- include('../../partials/admin-nav'); -%>
 
-    <div class="content-page">
-      <div class="content">
-        <%- include('../../partials/admin-nav'); -%>
-
-        <!-- Start Content-->
-        <div class="row">
-          <div class="col-12">
-            <div class="page-title-box">
-              <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                  <li class="breadcrumb-item active">Admin</li>
-                </ol>
-              </div>
-              <h4 class="page-title">Mutual Dealers - external </h4>
-            </div>
-          </div>
-        </div>
-        <!-- end page title -->
-
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-body">
-                <table id="table" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th>Recipient name – ext </th>
-                      <th>No. of Transactions </th>
-                      <th>No. of Senders</th>
-                      <th>Currency </th>
-                      <th>Amount </th>
-                      <th>Import FOB</th>
-                      <th>Import CIF</th>
-                      <th>Total IDF </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>ABC</td>
-                      <td>123</td>
-                      <td>21</td>
-                      <td>USD</td>
-                      <td>4376100.54</td>
-                      <td> 2,917,400.36 </td>
-                      <td> 2,917,400.36 </td>
-                      <td> 2,917,400.36 </td>
-                    </tr>
-                    <tr>
-                      <td>CDE</td>
-                      <td>142</td>
-                      <td>14</td>
-                      <td>USD</td>
-                      <td>2987631.9</td>
-                      <td> 1,991,754.60 </td>
-                      <td> 2,390,105.52 </td>
-                      <td> 2,390,105.52 </td>
-                    </tr>
-                    <tr>
-                      <td>FGH</td>
-                      <td>135</td>
-                      <td>8</td>
-                      <td>EURO</td>
-                      <td>1764524.71</td>
-                      <td> 1,176,349.81 </td>
-                      <td> 1,176,349.81 </td>
-                      <td> 1,176,349.81 </td>
-                    </tr>
-                    <tr>
-                      <td>IJK</td>
-                      <td>100</td>
-                      <td>6</td>
-                      <td>JPY</td>
-                      <td>3765120.83</td>
-                      <td> 2,510,080.55 </td>
-                      <td> 2,510,080.55 </td>
-                      <td> 2,510,080.55 </td>
-                    </tr>
-                    <tr>
-                      <td>MNO</td>
-                      <td>154</td>
-                      <td>30</td>
-                      <td>GBP</td>
-                      <td>8120543.24</td>
-                      <td> 5,413,695.49 </td>
-                      <td> 5,413,695.49 </td>
-                      <td> 5,413,695.49 </td>
-                    </tr>
-                  </tbody>
-                </table>
+          <!-- Start Content-->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item">
+                      <a href="/home/monitoring">Transaction Monitoring</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                      Mutual Dealers - external
+                    </li>
+                  </ol>
+                </div>
+                <h4 class="page-title">External mutual dealers</h4>
               </div>
             </div>
           </div>
+          <!-- end page title -->
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <table id="table" class="table text-center nowrap w-100">
+                    <thead>
+                      <tr>
+                        <th>Recipient name – ext</th>
+                        <th>No. of Transactions</th>
+                        <th>No. of Senders</th>
+                        <th>Currency</th>
+                        <th>Amount</th>
+                        <th>Import FOB</th>
+                        <th>Import CIF</th>
+                        <th>Total IDF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>ABC</td>
+                        <td>123</td>
+                        <td>21</td>
+                        <td>USD</td>
+                        <td>4376100.54</td>
+                        <td>2,917,400.36</td>
+                        <td>2,917,400.36</td>
+                        <td>2,917,400.36</td>
+                      </tr>
+                      <tr>
+                        <td>CDE</td>
+                        <td>142</td>
+                        <td>14</td>
+                        <td>USD</td>
+                        <td>2987631.9</td>
+                        <td>1,991,754.60</td>
+                        <td>2,390,105.52</td>
+                        <td>2,390,105.52</td>
+                      </tr>
+                      <tr>
+                        <td>FGH</td>
+                        <td>135</td>
+                        <td>8</td>
+                        <td>EURO</td>
+                        <td>1764524.71</td>
+                        <td>1,176,349.81</td>
+                        <td>1,176,349.81</td>
+                        <td>1,176,349.81</td>
+                      </tr>
+                      <tr>
+                        <td>IJK</td>
+                        <td>100</td>
+                        <td>6</td>
+                        <td>JPY</td>
+                        <td>3765120.83</td>
+                        <td>2,510,080.55</td>
+                        <td>2,510,080.55</td>
+                        <td>2,510,080.55</td>
+                      </tr>
+                      <tr>
+                        <td>MNO</td>
+                        <td>154</td>
+                        <td>30</td>
+                        <td>GBP</td>
+                        <td>8120543.24</td>
+                        <td>5,413,695.49</td>
+                        <td>5,413,695.49</td>
+                        <td>5,413,695.49</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- container -->
         </div>
+        <!-- content -->
 
-        <!-- container -->
-
+        <%- include('../../partials/footer'); -%>
       </div>
-      <!-- content -->
 
-
-
-      <%- include('../../partials/footer'); -%>
-
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+    <%- include('../../partials/admin-layout'); -%>
+    <script type="text/javascript">
+      let $objects = {};
 
-  </div>
-  <!-- END wrapper -->
+      $(() => {
+        $objects["table"] = $("#table");
 
+        $objects["table"].DataTable();
+        let selectedRow = null;
+        let datatable = null;
 
+<<<<<<< HEAD
   <%- include('../../partials/admin-layout'); -%>
   <script type="text/javascript">
     let $objects = {};
@@ -176,10 +208,17 @@
 
       datatable = $objects['table']
         .DataTable();
-
+$objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
     });
   </script>
 
 </body>
 
 </html>
+=======
+        datatable = $objects["table"].DataTable();
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b

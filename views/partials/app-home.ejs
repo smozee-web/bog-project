@@ -1,112 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <script>
-    let linkUserMgt = () => window.location = '/home/user';
-    let linkDataExc = () => window.location = '/home/data';
-    let linkDiligence = () => window.location = '/home/diligence';
-    let linkMonitoring = () => window.location = '/home/monitoring';
-    let linkSuspicious = () => window.location = '/home/suspicious';
-    let linkWatchlist = () => window.location = '/home/watchlist';
-    let linkTax = () => window.location = '/home/tax';
-    let linkCases = () => window.location = '/home/cases';
-    let linkAnalytics = () => window.location = '/home/analytics';
-  </script>
-</head>
+  <head>
+    <script>
+      let linkUserMgt = () => (window.location = "/home/user");
+      let linkDataExc = () => (window.location = "/home/data");
+      let linkDiligence = () => (window.location = "/home/diligence");
+      let linkMonitoring = () => (window.location = "/home/monitoring");
+      let linkSuspicious = () => (window.location = "/home/suspicious");
+      let linkWatchlist = () => (window.location = "/home/watchlist");
+      let linkTax = () => (window.location = "/home/tax");
+      let linkCases = () => (window.location = "/home/cases");
+      let linkAnalytics = () => (window.location = "/home/analytics");
+    </script>
+  </head>
 
-<!-- start page title -->
-<div class="row">
-  <div class="col-12">
-    <div class="page-title-box">
-      <h4 class="page-title">Home</h4>
-    </div>
-  </div>
-</div>
-<!-- end page title -->
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkUserMgt()">
-      <div class="card border-0 rounded-2 shadow-sm h-100">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/57946-profile-user-card.gif"
-          alt="User Management">
-        <div class="card-body">
-          <h5 class="card-title mb-0">User Management</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkDataExc()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/50839-data-exchange.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Data Exchange</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkDiligence()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/89683-user-reviews.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Customer Due Diligence</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkMonitoring()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/118043-data-analytics-techniques.gif"
-          alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Transaction Monitoring</h5>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkSuspicious()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/141376-browser-click.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">Suspicious Activity Reporting</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkWatchlist()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/140397-screening.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">Watchlist Screening</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkTax()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/126966-wish-list-animation.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">Tax Compliance</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkCases()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/95778-check-yes-search.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">Case Management</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkAnalytics()">
-      <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
-        <img class="card-img-top mx-auto mt-3 rounded-0" src="assets/images/94080-blockchain-analysis.gif" alt="">
-        <div class="card-body">
-          <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">Data Analytics</h5>
-        </div>
+  <!-- start page title -->
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <h4 class="page-title">Home</h4>
       </div>
     </div>
   </div>
-</div>
+  <!-- end page title -->
 
-<!-- end row -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkUserMgt()">
+        <div class="card border-0 rounded-2 shadow-sm h-100">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/57946-profile-user-card.gif"
+            alt="User Management"
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0">User Management</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkDataExc()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/50839-data-exchange.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0">Data Exchange</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkDiligence()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/89683-user-reviews.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0">Customer Due Diligence</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkMonitoring()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/118043-data-analytics-techniques.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0">Transaction Monitoring</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkSuspicious()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/141376-browser-click.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">
+              Suspicious Activity Reporting
+            </h5>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkWatchlist()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/140397-screening.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">
+              Watchlist Screening
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkTax()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/126966-wish-list-animation.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">
+              Tax Compliance
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkCases()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/95778-check-yes-search.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">
+              Case Management
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3 col-xl-2 mb-4" onclick="linkAnalytics()">
+        <div class="card border-0 rounded-2 shadow-sm h-100 bg-transparent">
+          <img
+            class="card-img-top mx-auto mt-3 rounded-0"
+            src="assets/images/94080-blockchain-analysis.gif"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title mb-0 mt-3 text-center font-weight-bold">
+              Data Analytics
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
 </html>

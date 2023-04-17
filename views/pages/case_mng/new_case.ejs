@@ -74,6 +74,120 @@
         <div class="content">
           <%- include('../../partials/admin-nav'); -%>
 
+<<<<<<< HEAD
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Admin</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Case Management</h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header" style="display: flex; justify-content: flex-end;">
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#login-modal" style="margin-left: auto;"> + New Case</button>
+              </div>
+              <div class="card-body">
+                <table id="table" class="table text-center nowrap w-100">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Subject</th>
+                      <th>Targets</th>
+                      <th>Status</th>
+                      <th>Attachment</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr role="button" class="case_man">
+                      <td>2022-07-05 </td>
+                      <td>Unity Link</td>
+                      <td>Unity Link</td>
+                      <td>active</td>
+                      <td>
+                        <button type="button" class="btn btn-sm btn-outline-info view"><i class="mdi mdi-eye"></i></button>
+                      </td>
+                    </tr>
+                    <tr role="button" class="case_man">
+                      <td>2022-11-26 </td>
+                      <td>MTN Ghana</td>
+                      <td>MTN Ghana</td>
+                      <td>idle</td>
+                      <td>
+                        <button type="button" class="btn btn-sm btn-outline-info view"><i class="mdi mdi-eye"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="text-center mt-2 mb-4">
+                  <a href="index.html" class="text-success">
+                    <span><img src="assets/images/gfca.png" alt="" height="40"></span>
+                  </a>
+                </div>
+
+                <form action="#" class="ps-3 pe-3">
+
+                  <div class="mb-3">
+                    <label for="chosen-date">Subject</label>
+                    <input type="text" class="form-control" placeholder="Enter a subject" id="amount">
+                  </div>
+                  <div class="mb-3">
+                    <label for="select-position">Targets </label>
+                    <select class="form-control" id="" name="position-type" placeholder="Chose target">
+                      <option value="">aaaaa</option>
+                      <option value="">aaaaaaa</option>
+                      <option value="">aaaaaaa</option>
+                      <option value="">aaaaaaa</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="chosen-date">Case Summary</label>
+                    <input type="input" class="form-control" id="chosen-date" name="chosen-date">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="file" class="form-label">Upload file</label>
+                    <input class="form-control" type="file" accept=".csv" id="file" onchange="checkfile(this);">
+                  </div>
+                  <div class="mb-3">
+                    <label for="select-position">Assigned to</label>
+                    <select class="form-control" id="" name="position-type">
+                      <option value="">aaaaa</option>
+                      <option value="">aaaaa</option>
+                      <option value="">aaaaaaa</option>
+                      <option value="">aaaaa</option>
+                    </select>
+                  </div>
+                  <div class="mb-3 text-center">
+                    <button class="btn rounded-pill btn-primary" type="submit">Submit</button>
+                  </div>
+
+                </form>
+
+=======
           <!-- Start Content-->
           <div class="row">
             <div class="col-12">
@@ -88,6 +202,7 @@
                   </ol>
                 </div>
                 <h4 class="page-title">Case Management</h4>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
             </div>
           </div>

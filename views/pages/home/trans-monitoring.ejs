@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Transaction Monitoring | gfca</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/gfca.png" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Transaction Monitoring | gfca </title>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-  <meta content="Coderthemes" name="author" />
-  <!-- App favicon -->
-  <link rel="shortcut icon" href="/assets/images/gfca.png">
+    <!-- third party css -->
+    <link
+      href="/assets/css/vendor/jquery-jvectormap-1.2.2.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/vendor/dataTables.bootstrap5.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <!-- third party css -->
-  <link href="/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+    <!-- third party css end -->
 
+    <!-- App css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="/assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
 
-  <!-- third party css end -->
+    <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
 
-  <!-- App css -->
-  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <style type="text/css">
+      .btn-xxl {
+        font-size: calc(2rem + 0.0012vw);
+        padding: 0.8rem 1rem;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
 
-  <link href="/assets/css/mystyle.css" rel="stylesheet" type="text/css" />
+  <body
+    class="loading"
+    data-layout-color="light"
+    data-leftbar-theme="dark"
+    data-layout-mode="fluid"
+    data-rightbar-onstart="true"
+  >
+    <!-- Begin page -->
+    <div class="wrapper">
+      <%- include('../../partials/admin-side'); -%>
 
-  <style type="text/css">
-    .btn-xxl {
-      font-size: calc(2rem + 0.0012vw);
-      padding: 0.8rem 1rem;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
+      <div class="content-page">
+        <div class="content">
+          <%- include('../../partials/admin-nav'); -%>
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
 
+<<<<<<< HEAD
 </head>
 
 <body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
@@ -56,7 +96,7 @@
 
             </div>
             <div class="card">
-              <div class="card-header">Search Form</div>
+              <div class="card-header">Transaction Monitoring Form</div>
               <div class="card-body">
                 <form id="search-form">
                   <div class="form-group">
@@ -72,10 +112,10 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="select-position">Transaction Monitoring</label>
+                    <label for="select-position">Elements</label>
                     <select class="form-control" id="trans_mon" name="position-type">
-                      <option value="mde">Mutual Dealers -external</option>
-                      <option value="mdi">Mutual Dealer Internal</option>
+                      <option value="mde">Mutual Dealers - external</option>
+                      <option value="mdi">Mutual Dealer - internal</option>
                       <option value="cb_idf">Commercial Banks (CBs) Compliance - IDF</option>
                       <option value="cb_loc">Commercial Banks (CBs) Compliance - LOC</option>
                       <option value="blk_trans">Black Transferers</option>
@@ -90,99 +130,172 @@
                   </div>
                 </form>
 
+=======
+                    <li class="breadcrumb-item active">
+                      Transaction Monitoring
+                    </li>
+                  </ol>
+                </div>
+                <h4 class="page-title">Transaction Monitoring</h4>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
             </div>
           </div>
-
+          <!-- Start Content-->
+          <div class="p-3 mb-2 bg-white text-dark rounded">
+            <div class="row justify-content-center">
+              <div class="col-md-6 offset-md-1">
+                <div class="card"></div>
+                <div class="card">
+                  <div class="card-header">Search Form</div>
+                  <div class="card-body">
+                    <form id="search-form">
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="from-date">From</label>
+                            <input
+                              type="date"
+                              value="2022-01-01"
+                              class="form-control"
+                              id="from_date"
+                              name="from"
+                            />
+                          </div>
+                          <div class="col-md-6">
+                            <label for="to-date">To</label>
+                            <input
+                              type="date"
+                              value="2022-12-31"
+                              class="form-control"
+                              id="to_date"
+                              name="to"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="select-position">Transaction types</label>
+                        <select
+                          class="form-control"
+                          id="trans_mon"
+                          name="position-type"
+                        >
+                          <option value="mde">Mutual Dealers -external</option>
+                          <option value="mdi">Mutual Dealer Internal</option>
+                          <option value="cb_idf">
+                            Commercial Banks (CBs) Compliance - IDF
+                          </option>
+                          <option value="cb_loc">
+                            Commercial Banks (CBs) Compliance - LOC
+                          </option>
+                          <option value="blk_trans">Black Transferers</option>
+                          <option value="blk_rec">Black receivers</option>
+                        </select>
+                      </div>
+                      <div class="card"></div>
+                      <div class="col-12 text-center">
+                        <button class="btn btn-info" type="button" id="submit">
+                          Search
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- container -->
         </div>
-        <!-- container -->
+        <!-- content -->
 
+        <%- include('../../partials/footer'); -%>
       </div>
-      <!-- content -->
 
-
-
-      <%- include('../../partials/footer'); -%>
-
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
     </div>
+    <!-- END wrapper -->
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+    <!-- bundle -->
+    <script src="/assets/js/vendor.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
 
-  </div>
-  <!-- END wrapper -->
+    <!-- third party js -->
+    <script src="/assets/js/vendor/apexcharts.min.js"></script>
+    <script src="/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
 
-  <!-- bundle -->
-  <script src="/assets/js/vendor.min.js"></script>
-  <script src="/assets/js/app.min.js"></script>
+    <script src="/assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/vendor/dataTables.bootstrap5.js"></script>
 
-  <!-- third party js -->
-  <script src="/assets/js/vendor/apexcharts.min.js"></script>
-  <script src="/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script src="/assets/js/vendor/jquery.dataTables.min.js"></script>
-  <script src="/assets/js/vendor/dataTables.bootstrap5.js"></script>
+    <!-- third party js ends -->
 
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+      let $objects = {};
+      $(() => {
+        $objects["from_date"] = $("#from_date");
+        $objects["to_date"] = $("#to_date");
+        $objects["trans_mon"] = $("#trans_mon");
 
+        $objects["submit"] = $("#submit");
 
-  <!-- third party js ends -->
+        //   $('.actual').hide();
+        //   $('.ghipss').hide();
+        //   $('#trans_mon').on('change', function() {
+        //     if ($(this).val() == 'auth_val' || $(this).val() == 'uncrd_term') {
+        //       $('.ghipss').show();
+        //       $('.actual').hide();
+        //     } else if ($(this).val() == 'actual_soa') {
+        //       $('.actual').show();
+        //       $('.ghipss').show();
+        //     }
+        //   });
 
-  <script type="text/javascript">
-    let $objects = {};
-    $(() => {
-      $objects['from_date'] = $('#from_date');
-      $objects['to_date'] = $('#to_date');
-      $objects['trans_mon'] = $('#trans_mon');
-     
-      $objects['submit'] = $('#submit');
-
-    //   $('.actual').hide();
-    //   $('.ghipss').hide();
-    //   $('#trans_mon').on('change', function() {
-    //     if ($(this).val() == 'auth_val' || $(this).val() == 'uncrd_term') {
-    //       $('.ghipss').show();
-    //       $('.actual').hide();
-    //     } else if ($(this).val() == 'actual_soa') {
-    //       $('.actual').show();
-    //       $('.ghipss').show();
-    //     }
-    //   });
-
-      $objects['submit'].click(function(e) {
-        e.preventDefault();
-        if ($objects['trans_mon'].val() == 'mde') {
-          location = `/trans_monitoring/mde?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'mdi') {
-          location = `/trans_monitoring/mdi?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'cb_idf') {
-          location = `/trans_monitoring/cb_idf?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'cb_loc') {
-          location = `/trans_monitoring/cb_loc?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'blk_trans') {
-          location = `/trans_monitoring/blk_trans?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        if ($objects['trans_mon'].val() == 'blk_rec') {
-          location = `/trans_monitoring/blk_rec?from-date=${$objects['from_date'].val()}&to-date=${$objects['to_date'].val()}`
-        }
-        
+        $objects["submit"].click(function (e) {
+          e.preventDefault();
+          if ($objects["trans_mon"].val() == "mde") {
+            location = `/trans_monitoring/mde?from-date=${$objects[
+              "from_date"
+            ].val()}&to-date=${$objects["to_date"].val()}`;
+          }
+          if ($objects["trans_mon"].val() == "mdi") {
+            location = `/trans_monitoring/mdi?from-date=${$objects[
+              "from_date"
+            ].val()}&to-date=${$objects["to_date"].val()}`;
+          }
+          if ($objects["trans_mon"].val() == "cb_idf") {
+            location = `/trans_monitoring/cb_idf?from-date=${$objects[
+              "from_date"
+            ].val()}&to-date=${$objects["to_date"].val()}`;
+          }
+          if ($objects["trans_mon"].val() == "cb_loc") {
+            location = `/trans_monitoring/cb_loc?from-date=${$objects[
+              "from_date"
+            ].val()}&to-date=${$objects["to_date"].val()}`;
+          }
+          if ($objects["trans_mon"].val() == "blk_trans") {
+            location = `/trans_monitoring/blk_trans?from-date=${$objects[
+              "from_date"
+            ].val()}&to-date=${$objects["to_date"].val()}`;
+          }
+          if ($objects["trans_mon"].val() == "blk_rec") {
+            location = `/trans_monitoring/blk_rec?from-date=${$objects[
+              "from_date"
+            ].val()}&to-date=${$objects["to_date"].val()}`;
+          }
+        });
       });
-    });
 
-    // $('#search-form').submit(function(e) {
-    //   // Prevent the default form submission
-    //   e.preventDefault();
-    //   // Navigate to the new page
-    //   window.location.href = '/position/ghipss_soa';
-    // });
-  </script>
-
-</body>
-
+      // $('#search-form').submit(function(e) {
+      //   // Prevent the default form submission
+      //   e.preventDefault();
+      //   // Navigate to the new page
+      //   window.location.href = '/position/ghipss_soa';
+      // });
+    </script>
+  </body>
 </html>
