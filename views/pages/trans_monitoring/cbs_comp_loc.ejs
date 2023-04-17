@@ -74,6 +74,92 @@
         <div class="content">
           <%- include('../../partials/admin-nav'); -%>
 
+<<<<<<< HEAD
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Admin</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Commercial Banks (CBs) Compliance - LOC</h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <table id="table" class="table text-center nowrap w-100">
+                  <thead>
+                    <tr>
+                      <th>Name of Bank </th>
+                      <th>No. of Transactions  </th>
+                      <th>Currency</th>
+                      <th>Total Transferred </th>
+                      <th>Total LOC</th>
+                      <th>Total Export FOB</th>
+                      <th>otal Export CIF </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>BoG</td>
+                      <td>543</td>
+                      <td>USD</td>
+                      <td>2,876,100.74</td>
+                      <td>3,451,320.89</td>
+                      <td>4,026,541.04</td>
+                      <td>4,314,151.11</td>
+                    </tr>
+                    <tr>
+                      <td>ABSA</td>
+                      <td>215</td>
+                      <td>EURO</td>
+                      <td>3,187,631.20</td>
+                      <td>3,825,157.44</td>
+                      <td>4,462,683.68</td>
+                      <td>4,781,446.80</td>
+                    </tr>
+                    <tr>
+                      <td>ECOBANK</td>
+                      <td>312</td>
+                      <td>JPY</td>
+                      <td>1,964,524.31</td>
+                      <td>2,357,429.17</td>
+                      <td>2,750,334.03</td>
+                      <td>2,946,786.47</td>
+                    </tr>                                
+                    <tr>
+                      <td>UBA</td>
+                      <td>456</td>
+                      <td>GBP</td>
+                      <td>3,865,120.13</td>
+                      <td> 4,638,144.16</td>
+                      <td>5,411,168.18</td>
+                      <td>5,797,680.20</td>
+                    </tr>
+                    <tr>
+                      <td>GCB</td>
+                      <td>367</td>
+                      <td>NZD</td>
+                      <td>5,320,543.24</td>
+                      <td>6,384,651.89</td>
+                      <td>7,448,760.54</td>
+                      <td>7,980,814.86</td>
+                    </tr>                                
+                  </tbody>
+                </table>
+=======
           <!-- Start Content-->
           <div class="row">
             <div class="col-12">
@@ -90,6 +176,7 @@
                 <h4 class="page-title">
                   Commercial Banks (CBs) Compliance - LOC
                 </h4>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
             </div>
           </div>
@@ -197,8 +284,31 @@
         let selectedRow = null;
         let datatable = null;
 
+<<<<<<< HEAD
+  <%- include('../../partials/admin-layout'); -%>
+  <script type="text/javascript">
+    let $objects = {};
+
+    $(() => {
+      $objects['table'] = $('#table');
+
+      $objects['table'].DataTable();
+      let selectedRow = null;
+      let datatable = null;
+
+      datatable = $objects['table']
+        .DataTable();
+$objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
+    });
+  </script>
+
+</body>
+
+</html>
+=======
         datatable = $objects["table"].DataTable();
       });
     </script>
   </body>
 </html>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b

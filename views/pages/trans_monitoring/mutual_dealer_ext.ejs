@@ -194,8 +194,31 @@
         let selectedRow = null;
         let datatable = null;
 
+<<<<<<< HEAD
+  <%- include('../../partials/admin-layout'); -%>
+  <script type="text/javascript">
+    let $objects = {};
+
+    $(() => {
+      $objects['table'] = $('#table');
+
+      $objects['table'].DataTable();
+      let selectedRow = null;
+      let datatable = null;
+
+      datatable = $objects['table']
+        .DataTable();
+$objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
+    });
+  </script>
+
+</body>
+
+</html>
+=======
         datatable = $objects["table"].DataTable();
       });
     </script>
   </body>
 </html>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b

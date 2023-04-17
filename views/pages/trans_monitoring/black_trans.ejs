@@ -74,6 +74,75 @@
         <div class="content">
           <%- include('../../partials/admin-nav'); -%>
 
+<<<<<<< HEAD
+    <div class="content-page">
+      <div class="content">
+        <%- include('../../partials/admin-nav'); -%>
+
+        <!-- Start Content-->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Admin</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Black Transferers</h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <table id="table" class="table text-center nowrap w-100">
+                  <thead>
+                    <tr>
+                      <th>Bank </th>
+                      <th>No. of Transactions</th>
+                      <th>Currency</th>
+                      <th>Amount </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>BoG</td>
+                      <td><a href="#">242</a></td>
+                      <td>USD</td>
+                      <td>3,876,100.74</td>
+                    </tr>               
+                    <tr>
+                      <td>ABSA</td>
+                      <td><a href="#">415</a></td>
+                      <td>CAD</td>
+                      <td>4,187,631.20</td>
+                    </tr>               
+                    <tr>
+                      <td>NIB</td>
+                      <td><a href="#">361</a></td>
+                      <td>CHF</td>
+                      <td>2,964,524.31</td>
+                    </tr>               
+                    <tr>
+                      <td>UBA</td>
+                      <td><a href="#">522</a></td>
+                      <td>CNY</td>
+                      <td> 4,865,120.13</td>
+                    </tr>               
+                    <tr>
+                      <td>GCB</td>
+                      <td><a href="#">467</a></td>
+                      <td>MXN</td>
+                      <td>6,320,543.24</td>
+                    </tr>               
+                              
+                  </tbody>
+                </table>
+=======
           <!-- Start Content-->
           <div class="row">
             <div class="col-12">
@@ -88,6 +157,7 @@
                   </ol>
                 </div>
                 <h4 class="page-title">Black Transferers</h4>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
             </div>
           </div>
@@ -174,8 +244,31 @@
         let selectedRow = null;
         let datatable = null;
 
+<<<<<<< HEAD
+  <%- include('../../partials/admin-layout'); -%>
+  <script type="text/javascript">
+    let $objects = {};
+
+    $(() => {
+      $objects['table'] = $('#table');
+
+      $objects['table'].DataTable();
+      let selectedRow = null;
+      let datatable = null;
+
+      datatable = $objects['table']
+        .DataTable();
+$objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
+    });
+  </script>
+
+</body>
+
+</html>
+=======
         datatable = $objects["table"].DataTable();
       });
     </script>
   </body>
 </html>
+>>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
