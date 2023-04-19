@@ -74,74 +74,6 @@
         <div class="content">
           <%- include('../../partials/admin-nav'); -%>
 
-<<<<<<< HEAD
-    <div class="content-page">
-      <div class="content">
-        <%- include('../../partials/admin-nav'); -%>
-
-        <!-- Start Content-->
-        <div class="row">
-          <div class="col-12">
-            <div class="page-title-box">
-              <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                  <li class="breadcrumb-item active">Admin</li>
-                </ol>
-              </div>
-              <h4 class="page-title">Black receivers</h4>
-            </div>
-          </div>
-        </div>
-        <!-- end page title -->
-
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-body">
-                <table id="table" class="table text-center nowrap w-100">
-                  <thead>
-                    <tr>
-                      <th>Bank </th>
-                      <th>No. of Transactions</th>
-                      <th>Currency</th>
-                      <th>Amount </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>NIB</td>
-                      <td><a href="#">441</a></td>
-                      <td>USD</td>
-                      <td>4,314,151.11</td>
-                    </tr>               
-                    <tr>
-                      <td>BoG</td>
-                      <td><a href="#">345</a></td>
-                      <td>EURO</td>
-                      <td>4,781,446.80</td>
-                    </tr>               
-                    <tr>
-                      <td>ECOBANK</td>
-                      <td><a href="#">252</a></td>
-                      <td>AUD</td>
-                      <td>2,946,786.47</td>
-                    </tr>               
-                    <tr>
-                      <td>UBA</td>
-                      <td><a href="#">326</a></td>
-                      <td>CNY</td>
-                      <td>5,797,680.20</td>
-                    </tr>               
-                    <tr>
-                      <td>GCB</td>
-                      <td><a href="#">627</a></td>
-                      <td>CHF</td>
-                      <td>7,980,814.86</td>
-                    </tr>               
-                  </tbody>
-                </table>
-=======
           <!-- Start Content-->
           <div class="row">
             <div class="col-12">
@@ -156,7 +88,6 @@
                   </ol>
                 </div>
                 <h4 class="page-title">Black Receivers</h4>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
               </div>
             </div>
           </div>
@@ -177,39 +108,39 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>100.00</td>
+                        <td>ABC Bank</td>
                         <td><a href="#">12,500.00</a></td>
-                        <td>1000.00</td>
+                        <td>USD</td>
                         <td>100.00</td>
                       </tr>
                       <tr>
-                        <td>100.00</td>
+                        <td>Ghana Bank</td>
                         <td><a href="#">12,500.00</a></td>
-                        <td>1000.00</td>
+                        <td>GBP</td>
                         <td>100.00</td>
                       </tr>
                       <tr>
-                        <td>100.00</td>
+                        <td>Bank of Industry</td>
                         <td><a href="#">12,500.00</a></td>
-                        <td>1000.00</td>
+                        <td>EUR</td>
                         <td>100.00</td>
                       </tr>
                       <tr>
-                        <td>100.00</td>
+                        <td>Rural Bank</td>
                         <td><a href="#">12,500.00</a></td>
-                        <td>1000.00</td>
+                        <td>CAN</td>
                         <td>100.00</td>
                       </tr>
                       <tr>
-                        <td>100.00</td>
+                        <td>Commerce Bank</td>
                         <td><a href="#">12,500.00</a></td>
-                        <td>1000.00</td>
+                        <td>XOF</td>
                         <td>100.00</td>
                       </tr>
                       <tr>
-                        <td>100.00</td>
+                        <td>Post Bank</td>
                         <td><a href="#">12,500.00</a></td>
-                        <td>1000.00</td>
+                        <td>USD</td>
                         <td>100.00</td>
                       </tr>
                     </tbody>
@@ -243,31 +174,8 @@
         let selectedRow = null;
         let datatable = null;
 
-<<<<<<< HEAD
-  <%- include('../../partials/admin-layout'); -%>
-  <script type="text/javascript">
-    let $objects = {};
-
-    $(() => {
-      $objects['table'] = $('#table');
-
-      $objects['table'].DataTable();
-      let selectedRow = null;
-      let datatable = null;
-
-      datatable = $objects['table']
-        .DataTable();
-$objects['table'].wrap(`<div style="overflow-x: auto;"></div>`);
-    });
-  </script>
-
-</body>
-
-</html>
-=======
         datatable = $objects["table"].DataTable();
       });
     </script>
   </body>
 </html>
->>>>>>> 0fe0c21a21615a7be6157a0ae0d094516ca5795b
